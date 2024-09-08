@@ -28,7 +28,9 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "declarationMap": true,
-    "useDefineForClassFields": true
+    "useDefineForClassFields": true,
+    "downlevelIteration": true
   },
-  "include": ["src/**/*.ts", "src/**/*.js", "eslint.config.js"]
+  "include": ["src/**/*.ts", "src/**/*.js", "eslint.config.js"],
+  "exclude": ["examples/**", "main.tsx"]
 }
