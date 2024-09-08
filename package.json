@@ -28,12 +28,15 @@
     "prepare": "husky",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
+    "test-ui": "vitest --ui",
+    "test-ui-cov": "vitest --ui --coverage.enabled=true",
     "prebuild": "pnpm test && pnpm lint && pnpm format",
     "build": "tsc && vite build",
     "api-extract": "api-extractor run --local --verbose",
     "api-docs": "pnpm api-documenter markdown -i temp -o docs",
     "build-and-doc": "pnpm build && pnpm api-extract && pnpm api-docs",
-    "analyze": "pnpm build --report"
+    "analyze": "pnpm build --report",
+    "dev": "vite"
   },
   "devDependencies": {
     "@eslint/js": "9.9.1",
