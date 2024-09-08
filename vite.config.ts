@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
 import eslint from "vite-plugin-eslint";
@@ -12,6 +12,12 @@ export default defineConfig({
       name: "datepickerjs",
       fileName: "datepickerjs",
       formats: ["es", "cjs"],
+    },
+  },
+  test: {
+    coverage: {
+      provider: "v8",
+      include: ["src/core/**", "src/utils/**", "src/pickers/**"],
     },
   },
 });
