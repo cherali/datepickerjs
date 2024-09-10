@@ -1,4 +1,4 @@
-# datepickerjs
+# drm-datepickerjs
 
 An headless, event-base, picker for Javascript project, with customization and localization support. This package provides your core functionality to create any picker your want, it does't matter which design system you use for UI and how much you need to customize the picker. <br>
 This package provides you with 3 different of pickers
@@ -41,15 +41,15 @@ Also with MultiSelectPicker you can select range of dates by holding `shiftKey` 
 ## Installation
 
 ```bash
-npm i datepickerjs
+npm i drm-datepickerjs
 ```
 
 ```bash
-yarn add datepickerjs
+yarn add drm-datepickerjs
 ```
 
 ```bash
-pnpm i datepickerjs
+pnpm i drm-datepickerjs
 ```
 
 ## Documentation Links

@@ -17,9 +17,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src"),
-      name: "datepickerjs",
-      fileName: "datepickerjs",
-      formats: ["es", "cjs"],
+      name: "drm-datepickerjs",
+      fileName: "drm-datepickerjs",
+      formats: ["es", "cjs", "umd"],
     },
   },
   test: {
