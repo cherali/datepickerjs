@@ -161,16 +161,9 @@ function MultiSelectPickerExample() {
     day: Days,
     currentColor: string,
     selectColor: string,
-    hoveredColor: string,
     otherColor: string,
   ) => {
     if (isSelectedDay(day.date) && day.state === "current") return selectColor;
-    else if (
-      !isSelecting() &&
-      isDateInRange(day.date) &&
-      day.state === "current"
-    )
-      return hoveredColor;
     else if (day.state === "current") return currentColor;
     else return otherColor;
   };
@@ -182,7 +175,7 @@ function MultiSelectPickerExample() {
       "#2cf2f2",
       "#d8d8d8",
     ),
-    color: getPickerColor(day, "#000", "#099090", "#066060", "#888"),
+    color: getPickerColor(day, "#000", "#099090", "#888"),
     paddingVertical: 5,
   });
 

@@ -142,7 +142,7 @@ function TwoSideRangePicker() {
     </View>
   );
 
-  const getRangePickerBackgroundColor = (
+  const getPickerBackgroundColor = (
     day: Days,
     currentColor: string,
     selectColor: string,
@@ -164,33 +164,26 @@ function TwoSideRangePicker() {
     else return currentColor;
   };
 
-  const getRangePickerColor = (
+  const getPickerColor = (
     day: Days,
     currentColor: string,
     selectColor: string,
-    hoveredColor: string,
     otherColor: string,
   ) => {
     if (isSelectedDay(day.date) && day.state === "current") return selectColor;
-    else if (
-      !isSelecting() &&
-      isDateInRange(day.date) &&
-      day.state === "current"
-    )
-      return hoveredColor;
     else if (day.state === "current") return currentColor;
     else return otherColor;
   };
 
   const dayStyle = (day: Days) => ({
-    backgroundColor: getRangePickerBackgroundColor(
+    backgroundColor: getPickerBackgroundColor(
       day,
       "#cacaca",
       "#2cf2f2",
       "#b7fafa",
       "#d8d8d8",
     ),
-    color: getRangePickerColor(day, "#000", "#099090", "#066060", "#888"),
+    color: getPickerColor(day, "#000", "#099090", "#888"),
     paddingVertical: 5,
   });
 
