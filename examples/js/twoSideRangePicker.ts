@@ -4,7 +4,7 @@ import {
   formatDate,
   Days,
   PickerLocale,
-} from "datepickerjs";
+} from "drm-datepickerjs";
 
 const locale: PickerLocale = year => ({
   months: {

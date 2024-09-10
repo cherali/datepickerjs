@@ -1,4 +1,9 @@
-import { DatePicker, createDate, formatDate, PickerLocale } from "datepickerjs";
+import {
+  DatePicker,
+  createDate,
+  formatDate,
+  PickerLocale,
+} from "drm-datepickerjs";
 
 const locale: PickerLocale = year => ({
   months: {
