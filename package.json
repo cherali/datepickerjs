@@ -36,13 +36,13 @@
   "sideEffects": [
     ".ts"
   ],
-  "main": "./dist/drm-datepickerjs.umd.cjs",
+  "main": "./dist/drm-datepickerjs.umd.js",
   "module": "./dist/drm-datepickerjs.js",
   "types": "./dist/drm-datepickerjs.d.ts",
   "exports": {
     ".": {
       "import": "./dist/drm-datepickerjs.js",
-      "require": "./dist/drm-datepickerjs.umd.cjs",
+      "require": "./dist/drm-datepickerjs.umd.js",
       "types": "./dist/drm-datepickerjs.d.ts"
     }
   },
