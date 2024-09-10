@@ -30,7 +30,7 @@ Lets imagine maxRow is `10` and dayRenderType is `fill`, the current month have 
 70 - 37 = 33, // remaining spots, most be fill with next month!
 ```
 
-but next month may have max 31 days, so need to fill 2 remaining spot with next next month, and in this case depends on others property you may encountered with weird behavior, thats why not recommended to set maxRow more than 11 if autoRow is true, in this case 8 will be good number but 9 may cause problem!!
+but next month may have max 31 days, so need to fill 2 remaining spot with next next month, and picker just add to that number!, thats why not recommended to set maxRow more than 11 if autoRow is true, in this case 8 will be good number but 9 may cause problem!!
 
 ### fill calculation
 
