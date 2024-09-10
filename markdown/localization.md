@@ -2,7 +2,7 @@
 
 #### Localization
 
-This package can be customize easily and adding localization requires 5 shot step: (here localization for Jalali calendar)
+This package can be customize easily and adding localization requires 5 steps: (here localization for Jalali calendar)
 
 for localization:
 
