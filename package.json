@@ -1,9 +1,31 @@
 {
   "name": "datepickerjs",
+  "repository": "cherali/datepickerjs",
+  "description": "An headless, event-base picker for JavaScript and any JavaScript base library/framework written in typescript, supports for DatePicker, RangePicker, MultiSelectPicker.",
   "private": false,
   "version": "0.1.0",
   "type": "module",
   "license": "MIT",
+  "author": {
+    "name": "Ali Cheraghi",
+    "email": "alicheraghi148@gmail.com"
+  },
+  "keywords": [
+    "picker",
+    "datepicker",
+    "rangepicker",
+    "multiselectpicker",
+    "react-datepicker",
+    "react-rangepicker",
+    "react-multiselectpicker",
+    "jalali-picker",
+    "jalali-datepicker",
+    "jalali-rangepicker",
+    "jalali-multiselectpicker"
+  ],
+  "bugs": {
+    "url": "https://github.com/cherali/datepickerjs/issues"
+  },
   "files": [
     "dist",
     "src",
