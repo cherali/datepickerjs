@@ -1,6 +1,8 @@
 {
-  "name": "datepickerjs",
-  "repository": "cherali/datepickerjs",
+  "name": "drm-datepickerjs",
+  "repository": {
+    "url": "cherali/datepickerjs"
+  },
   "description": "An headless, event-base picker for JavaScript and any JavaScript base library/framework written in typescript, supports for DatePicker, RangePicker, MultiSelectPicker.",
   "private": false,
   "version": "0.1.0",
