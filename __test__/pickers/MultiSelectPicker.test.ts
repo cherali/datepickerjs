@@ -86,6 +86,12 @@ describe("Testing `MultiSelectPicker` Functionality", () => {
     twoSide: true,
   });
 
+  describe("Testing getEndDate", () => {
+    test(`Test get end date`, () => {
+      expect(picker.getEndDate()).toBe("");
+    });
+  });
+
   describe("Testing selection", () => {
     test(`Test if ${date} is selected, most return false`, () => {
       expect(picker.getSelectedDates().has(date)).toBe(false);
@@ -188,6 +194,17 @@ describe("Testing `MultiSelectPicker` Functionality", () => {
       picker.clearSelection();
       picker.addDate(date);
       expect(picker.getFirstSelectedDate()).toBe(date);
+    });
+
+    test("1. Testing for getFirstSelectedDateUnformatted", () => {
+      picker.clearSelection();
+      picker.addDate(date);
+      expect(picker.getFirstSelectedDateUnformatted()).toBe(date);
+    });
+
+    test("2. Testing for getFirstSelectedDateUnformatted", () => {
+      picker.clearSelection();
+      expect(picker.getFirstSelectedDateUnformatted()).toBe("");
     });
   });
 

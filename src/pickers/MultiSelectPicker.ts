@@ -97,7 +97,16 @@ class MultiSelectPicker extends BasePicker implements IMultiSelectPicker {
    * @public
    */
   public getFirstSelectedDate() {
-    return this._selectedDatesLookup.keys().next().value;
+    const firstItem = this._selectedDatesLookup.keys().next().value || "";
+    return firstItem ? this._dateFormatter(firstItem) : "";
+  }
+
+  /**
+   * {@inheritdoc IMultiSelectPicker.getFirstSelectedDateUnformatted}
+   * @public
+   */
+  public getFirstSelectedDateUnformatted() {
+    return this._selectedDatesLookup.keys().next().value || "";
   }
 
   /**

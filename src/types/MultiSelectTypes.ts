@@ -18,9 +18,14 @@ export interface IMultiSelectPicker {
   getSelectedDates(): Map<string, number>;
 
   /**
-   * If selection map is not empty returns first item
+   * If selection map is not empty returns first item - formatted
    */
-  getFirstSelectedDate(): string | undefined;
+  getFirstSelectedDate(): string;
+
+  /**
+   * If selection map is not empty returns first item - unformatted
+   */
+  getFirstSelectedDateUnformatted(): string;
 
   /**
    * Add to selection Map
