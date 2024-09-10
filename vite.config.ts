@@ -18,10 +18,9 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src"),
       name: "DRMDatepickerjs",
-      formats: ["es", "cjs", "umd", "iife"],
+      formats: ["es", "cjs", "iife"],
       fileName: format => {
-        if (format == "umd") return `drm-datepickerjs.${format}.js`;
-        else if (format == "iife") return `drm-datepickerjs.standalone.js`;
+        if (format == "iife") return `drm-datepickerjs.standalone.js`;
         else if (format == "es") return `drm-datepickerjs.js`;
         return `drm-datepickerjs.${format}`;
       },
