@@ -200,7 +200,7 @@ function SimpleDatePicker() {
           onChange={() => {}}
         />
 
-        {isOpen() && (
+        {isOpen() && !isLoading() && (
           <div
             style={{
               display: "flex",
@@ -338,7 +338,7 @@ function SimpleDatePicker() {
               </div>
             )}
 
-            {getMode() === "day" && !isLoading() && (
+            {getMode() === "day" && (
               <div style={{ flex: 1 }}>
                 <div>
                   <div

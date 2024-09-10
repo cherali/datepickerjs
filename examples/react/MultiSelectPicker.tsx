@@ -169,29 +169,20 @@ function MultiSelectPickerExample() {
     </div>
   );
 
-  const getRangePickerBackgroundColor = (
+  const getPickerBackgroundColor = (
     day: Days,
     currentColor: string,
     selectColor: string,
-    hoveredColor: string,
     otherColor: string,
   ) => {
-    if (
-      isSelecting() &&
-      isDateInRange(day.date) &&
-      isEndDate(day.date) &&
-      day.state == "current"
-    )
-      return "#23cdcd";
-    else if (isSelecting() && isDateInRange(day.date) && day.state == "current")
-      return "#deffff";
+    if (isSelecting() && isDateInRange(day.date) && day.state == "current")
+      return "#a1ffff";
     else if (day.state !== "current") return otherColor;
     else if (isSelectedDay(day.date)) return selectColor;
-    else if (!isSelecting() && isDateInRange(day.date)) return hoveredColor;
     else return currentColor;
   };
 
-  const getRangePickerColor = (
+  const getPickerColor = (
     day: Days,
     currentColor: string,
     selectColor: string,
@@ -210,14 +201,13 @@ function MultiSelectPickerExample() {
   };
 
   const dayStyle = day => ({
-    backgroundColor: getRangePickerBackgroundColor(
+    backgroundColor: getPickerBackgroundColor(
       day,
       "#cacaca",
       "#2cf2f2",
-      "#b7fafa",
       "#d8d8d8",
     ),
-    color: getRangePickerColor(day, "#000", "#099090", "#066060", "#888"),
+    color: getPickerColor(day, "#000", "#099090", "#066060", "#888"),
     width: "100%",
     border: "none",
     padding: "5px 0",
@@ -254,7 +244,7 @@ function MultiSelectPickerExample() {
           clear selection
         </button>
 
-        {isOpen() && (
+        {isOpen() && !isLoading() && (
           <div
             style={{
               display: "flex",
@@ -392,7 +382,7 @@ function MultiSelectPickerExample() {
               </div>
             )}
 
-            {getMode() === "day" && !isLoading() && (
+            {getMode() === "day" && (
               <>
                 <div style={{ flex: 1 }}>
                   <div>

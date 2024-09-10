@@ -238,7 +238,7 @@ function TwoSideRangePicker() {
           onChange={() => {}}
         />
 
-        {isOpen() && (
+        {isOpen() && !isLoading() && (
           <div
             style={{
               display: "flex",
@@ -376,7 +376,7 @@ function TwoSideRangePicker() {
               </div>
             )}
 
-            {getMode() === "day" && !isLoading() && (
+            {getMode() === "day" && (
               <>
                 <div style={{ flex: 1 }}>
                   <div>
