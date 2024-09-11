@@ -75,7 +75,7 @@ function picker() {
     return interpolate(titleTemplate?.innerHTML, { month, year });
   };
 
-  const getRangePickerBackgroundColor = (
+  const getPickerBackgroundColor = (
     day,
     currentColor,
     selectColor,
@@ -86,15 +86,15 @@ function picker() {
     else return currentColor;
   };
 
-  const getRangePickerColor = (day, currentColor, selectColor, otherColor) => {
+  const getPickerColor = (day, currentColor, selectColor, otherColor) => {
     if (isSelectedDay(day.date) && day.state === "current") return selectColor;
     else if (day.state === "current") return currentColor;
     else return otherColor;
   };
 
   const dayStyle = day => `
-    background-color: ${getRangePickerBackgroundColor(day, "#cacaca", "#2cf2f2", "#d8d8d8")};
-    color: ${getRangePickerColor(day, "#000", "#099090", "#888")};
+    background-color: ${getPickerBackgroundColor(day, "#cacaca", "#2cf2f2", "#d8d8d8")};
+    color: ${getPickerColor(day, "#000", "#099090", "#888")};
     width: 100%;
     border: none;
     padding: 5px 0;
