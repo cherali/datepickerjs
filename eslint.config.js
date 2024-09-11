@@ -9,5 +9,5 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   eslintConfigPrettier,
-  { ignores: ["dist/**", 'examples/**', '__test__/**', 'coverage/**'] }
+  { ignores: ["dist/**", 'examples/**', '__test__/**', 'coverage/**', 'docs/**', 'etc/**', 'markdown/**', 'temp/**'] }
 ];

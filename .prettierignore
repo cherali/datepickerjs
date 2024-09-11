@@ -37,3 +37,10 @@ public/static/locales/**
 *.config.js
 
 cypress
+
+/docs/
+/markdown/
+/etc/
+/temp/
+/dist/
+/coverage/
