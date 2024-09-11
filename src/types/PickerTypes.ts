@@ -155,6 +155,11 @@ export interface BasePickerOptions {
    * Whether the picker open or closed at start
    */
   open?: boolean;
+
+  /**
+   * Set picker mode
+   */
+  mode?: PickerMode;
 }
 
 /**

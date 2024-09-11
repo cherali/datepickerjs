@@ -83,7 +83,7 @@ export abstract class BasePicker
   protected _open = false;
 
   /** @internal */
-  protected _mode: PickerMode = "day";
+  protected _mode: PickerMode;
 
   /** @internal */
   protected _isLoading = false;
@@ -101,6 +101,7 @@ export abstract class BasePicker
     this._dateFormatter = dateFormatter;
 
     this._open = props.open ?? false;
+    this._mode = props.mode ?? "day";
 
     this._weekOffset = props.weekOffset || 0;
 
