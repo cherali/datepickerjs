@@ -1,0 +1,185 @@
+<div #containerRef style="display: inline-block; width: auto;">
+  <button (click)="datePicker.goToToday()">Go to today</button>
+
+  <div style="width: 600px;">
+    <div style="display: flex; gap: 16px;">
+      <input type="text" (focus)="datePicker.setOpen(true)" [value]="datePicker.getFirstSelectedDate()" [readonly]="true">
+
+      <span *ngIf="datePicker.getSelectedDates().size > 1" style="margin-inline-start: 8px">
+        +{{ datePicker.getSelectedDates().size - 1 }}
+      </span>
+
+      <button style="margin-inline-start: 8px" (click)="datePicker.clearSelection()">
+        clear selection
+      </button>
+    </div>
+
+    <ng-container *ngIf="datePicker.isOpen() && !datePicker.isLoading()"
+                  style="display: flex; width: 600px; gap: 16px; flex-direction: row;">
+      <ng-container *ngIf="datePicker.getMode() === 'month'">
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-direction: row-reverse;">
+            <div style="flex: 1; text-align: end;"></div>
+            <div>
+              <div>
+                <button style="border: none; background-color: transparent;" (click)="datePicker.setMode('year')">
+                  <span style="display: inline;">{{ datePicker.getRenderedYear() }}</span>
+                </button>
+                <button style="border: none; background-color: transparent;" (click)=" datePicker.setMode('month')">
+                  <span style="display: inline;">{{ datePicker.getRenderedMonthName() }}</span>
+                </button>
+              </div>
+            </div>
+            <div style="flex: 1;">
+              <button (click)="datePicker.setMode('day')">back</button>
+            </div>
+          </div>
+
+          <div style="width: 100%; margin: 0 auto;">
+            <div [style]="{height: datepickerHeight+'px', overflow: 'auto'}">
+              <div *ngFor="let month of datePicker.getMonthList()">
+                <div
+                  [ngStyle]="{ 'background-color': datePicker.getRenderedMonth() === month.monthNumber ? '#cacaca' : '#fff', 'padding': '5px 0' }">
+                  <button (click)="datePicker.changeMonth(month.monthNumber)"
+                          style="width: 100%; padding: 0; margin: 0; background-color: transparent; border: none;">
+                    <span>{{ month.name }}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="datePicker.getMode() === 'year'">
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-direction: row-reverse;">
+            <div style="flex: 1;"></div>
+            <div>
+              <div>
+                <button style="border: none; background-color: transparent;" (click)="datePicker.setMode('year')">
+                  <span style="display: inline;">{{ datePicker.getRenderedYear() }}</span>
+                </button>
+                <button style="border: none; background-color: transparent;" (click)=" datePicker.setMode('month')">
+                  <span style="display: inline;">{{ datePicker.getRenderedMonthName() }}</span>
+                </button>
+              </div>
+            </div>
+            <div style="flex: 1;">
+              <button (click)="datePicker.setMode('day')">back</button>
+            </div>
+          </div>
+
+          <div style="width: 100%; margin: 0 auto;">
+            <div
+              [style]="{display: 'flex', height: datepickerHeight+'px', overflow: 'auto', 'flex-wrap': 'wrap', gap: '3px'}">
+              <ng-container *ngFor="let year of datePicker.getYearsList(1950, 2050)">
+                <div
+                  [ngStyle]="{ 'background-color': datePicker.getRenderedYear() === year ? '#cacaca' : '#fafafa', padding: '5px 0', 'text-align': 'center', width: '19%' }">
+                  <button (click)="datePicker.changeYear(year)" style="background-color: transparent; border: none;">
+                    {{ year }}
+                  </button>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="datePicker.getMode() === 'day'" >
+        <div style="display: flex; gap: 4px">
+          <div style="flex: 1;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <button (click)="datePicker.handleShowPrevMonth()">prev</button>
+
+                <div>
+                  <button style="border: none; background-color: transparent;" (click)="datePicker.setMode('year')">
+                    <span style="display: inline;">{{ datePicker.getRenderedYear() }}</span>
+                  </button>
+                  <button style="border: none; background-color: transparent;" (click)=" datePicker.setMode('month')">
+                    <span style="display: inline;">{{ datePicker.getRenderedMonthName() }}</span>
+                  </button>
+                </div>
+
+                <div></div>
+              </div>
+
+
+              <div style="display: flex; padding: 7px 0 5px; flex-wrap: wrap;">
+                <ng-container *ngFor="let week of weeksTitle">
+                  <div style="background-color: #dadada; text-align: center; width: calc(100% / 7);">
+                    <span>{{ week }}</span>
+                  </div>
+                </ng-container>
+              </div>
+
+              <div style="display: flex; flex-wrap: wrap;">
+                <ng-container *ngFor="let index of [].constructor(datePicker.getDayMonthOffset(0)); let i = index;">
+                  <div style="width: calc(100% / 7);"></div>
+                </ng-container>
+
+                <ng-container *ngFor="let day of daysList; let index = index">
+                  <div [ngStyle]="{ width: 'calc(100% / 7)' }" (mouseenter)="handleHoverCell(day.date)">
+                    <button  [ngStyle]="dayStyle(day)" [disabled]="day.day === 0"
+                             (click)="changeDayClick(day.date, day.state)($event)">
+                      {{ day.day }}
+                    </button>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div style="flex: 1;" *ngIf="daysListNext.length > 0">
+
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div></div>
+                <div>
+                  <button style="border: none; background-color: transparent;" (click)="datePicker.setMode('year')">
+                    <span style="display: inline;">{{ datePicker.getRenderedNextDateYear() }}</span>
+                  </button>
+                  <button style="border: none; background-color: transparent;" (click)=" datePicker.setMode('month')">
+                    <span style="display: inline;">{{ datePicker.getRenderedNextMonthName() }}</span>
+                  </button>
+                </div>
+
+                <button (click)="datePicker.handleShowNextMonth()">next</button>
+
+              </div>
+
+
+              <div style="display: flex; padding: 7px 0 5px; flex-wrap: wrap;">
+                <ng-container *ngFor="let week of weeksTitle">
+                  <div style="background-color: #dadada; text-align: center; width: calc(100% / 7);">
+                    <span>{{ week }}</span>
+                  </div>
+                </ng-container>
+              </div>
+
+              <div style="display: flex; flex-wrap: wrap;" >
+                <ng-container *ngFor="let index of [].constructor(datePicker.getDayMonthOffset(1)); let i = index;">
+                  <div style="width: calc(100% / 7);"></div>
+                </ng-container>
+
+                <ng-container *ngFor="let day of daysListNext; let index = index">
+                  <div [ngStyle]="{ width: 'calc(100% / 7)' }" (mouseenter)="handleHoverCell(day.date)">
+
+                    <button  [ngStyle]="dayStyle(day)" [disabled]="day.day === 0"
+                             (click)="changeDayClick(day.date, day.state)($event)">
+                      {{ day.day }}
+                    </button>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+    </ng-container>
+  </div>
+</div>
