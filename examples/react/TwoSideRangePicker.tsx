@@ -147,7 +147,7 @@ function TwoSideRangePicker() {
           handleSmoothScroll(yearWrapperRef, selectedYearRef);
         }}
       >
-        <h2 style={{ display: "inline" }}>{year}</h2>
+        <span style={{ display: "inline" }}>{year}</span>
       </button>
       <button
         style={{
@@ -160,7 +160,7 @@ function TwoSideRangePicker() {
           handleSmoothScroll(monthWrapperRef, selectedMonthRef);
         }}
       >
-        <h2 style={{ display: "inline" }}>{month}</h2>
+        <span style={{ display: "inline" }}>{month}</span>
       </button>
     </div>
   );
@@ -300,7 +300,7 @@ function TwoSideRangePicker() {
                           }}
                           onClick={() => changeMonth(month.monthNumber)}
                         >
-                          <p>{month.name}</p>
+                          <span>{month.name}</span>
                         </button>
                       </div>
                     ))}

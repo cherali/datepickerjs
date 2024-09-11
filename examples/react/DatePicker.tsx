@@ -133,7 +133,7 @@ function SimpleDatePicker() {
           handleSmoothScroll(yearWrapperRef, selectedYearRef);
         }}
       >
-        <h2 style={{ display: "inline" }}>{year}</h2>
+        <span style={{ display: "inline" }}>{year}</span>
       </button>
       <button
         style={{
@@ -146,12 +146,12 @@ function SimpleDatePicker() {
           handleSmoothScroll(monthWrapperRef, selectedMonthRef);
         }}
       >
-        <h2 style={{ display: "inline" }}>{month}</h2>
+        <span style={{ display: "inline" }}>{month}</span>
       </button>
     </div>
   );
 
-  const getRangePickerBackgroundColor = (
+  const getPickerBackgroundColor = (
     day: Days,
     currentColor: string,
     selectColor: string,
@@ -162,7 +162,7 @@ function SimpleDatePicker() {
     else return currentColor;
   };
 
-  const getRangePickerColor = (
+  const getPickerColor = (
     day: Days,
     currentColor: string,
     selectColor: string,
@@ -174,13 +174,13 @@ function SimpleDatePicker() {
   };
 
   const dayStyle = (day: Days) => ({
-    backgroundColor: getRangePickerBackgroundColor(
+    backgroundColor: getPickerBackgroundColor(
       day,
       "#cacaca",
       "#2cf2f2",
       "#d8d8d8",
     ),
-    color: getRangePickerColor(day, "#000", "#099090", "#888"),
+    color: getPickerColor(day, "#000", "#099090", "#888"),
     width: "100%",
     border: "none",
     padding: "5px 0",
@@ -262,7 +262,7 @@ function SimpleDatePicker() {
                           }}
                           onClick={() => changeMonth(month.monthNumber)}
                         >
-                          <p>{month.name}</p>
+                          <span>{month.name}</span>
                         </button>
                       </div>
                     ))}

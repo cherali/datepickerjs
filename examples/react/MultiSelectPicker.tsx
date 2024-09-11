@@ -151,7 +151,7 @@ function MultiSelectPickerExample() {
           handleSmoothScroll(yearWrapperRef, selectedYearRef);
         }}
       >
-        <h2 style={{ display: "inline" }}>{year}</h2>
+        <span style={{ display: "inline" }}>{year}</span>
       </button>
       <button
         style={{
@@ -164,7 +164,7 @@ function MultiSelectPickerExample() {
           handleSmoothScroll(monthWrapperRef, selectedMonthRef);
         }}
       >
-        <h2 style={{ display: "inline" }}>{month}</h2>
+        <span style={{ display: "inline" }}>{month}</span>
       </button>
     </div>
   );
@@ -213,14 +213,13 @@ function MultiSelectPickerExample() {
     padding: "5px 0",
   });
 
-  const changeClickDay =
-    (date, state) => (evt: MouseEvent<HTMLButtonElement>) => {
-      if (evt.shiftKey) {
-        selectInRange(date, state);
-      } else {
-        changeDay(date);
-      }
-    };
+  const changeDayClick = (date, state) => (evt: MouseEvent) => {
+    if (evt.shiftKey) {
+      selectInRange(date, state);
+    } else {
+      changeDay(date);
+    }
+  };
 
   return (
     <div style={{ display: "inline-block", width: "auto" }}>
@@ -306,7 +305,7 @@ function MultiSelectPickerExample() {
                           }}
                           onClick={() => changeMonth(month.monthNumber)}
                         >
-                          <p>{month.name}</p>
+                          <span>{month.name}</span>
                         </button>
                       </div>
                     ))}
@@ -454,7 +453,7 @@ function MultiSelectPickerExample() {
                             <button
                               style={dayStyle(day)}
                               disabled={day.day === 0}
-                              onClick={changeClickDay(day.date, day.state)}
+                              onClick={changeDayClick(day.date, day.state)}
                             >
                               {day.day}
                             </button>
@@ -541,7 +540,7 @@ function MultiSelectPickerExample() {
                             <button
                               style={dayStyle(day)}
                               disabled={day.day === 0}
-                              onClick={changeClickDay(day.date, day.state)}
+                              onClick={changeDayClick(day.date, day.state)}
                             >
                               {day.day}
                             </button>
