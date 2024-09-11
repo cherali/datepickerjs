@@ -186,16 +186,9 @@ function MultiSelectPickerExample() {
     day: Days,
     currentColor: string,
     selectColor: string,
-    hoveredColor: string,
     otherColor: string,
   ) => {
     if (isSelectedDay(day.date) && day.state === "current") return selectColor;
-    else if (
-      !isSelecting() &&
-      isDateInRange(day.date) &&
-      day.state === "current"
-    )
-      return hoveredColor;
     else if (day.state === "current") return currentColor;
     else return otherColor;
   };
@@ -207,7 +200,7 @@ function MultiSelectPickerExample() {
       "#2cf2f2",
       "#d8d8d8",
     ),
-    color: getPickerColor(day, "#000", "#099090", "#066060", "#888"),
+    color: getPickerColor(day, "#000", "#099090", "#888"),
     width: "100%",
     border: "none",
     padding: "5px 0",
@@ -292,7 +285,7 @@ function MultiSelectPickerExample() {
                             getRenderedMonth() === month.monthNumber
                               ? "#cacaca"
                               : "#fff",
-                          padding: "1px 5px",
+                          padding: "5px 0",
                         }}
                       >
                         <button
@@ -358,7 +351,7 @@ function MultiSelectPickerExample() {
                         style={{
                           backgroundColor:
                             getRenderedYear() === year ? "#cacaca" : "#fafafa",
-                          padding: "1px 0px",
+                          padding: "5px 0",
                           textAlign: "center",
                           width: "19%",
                         }}

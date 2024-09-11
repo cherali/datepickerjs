@@ -287,7 +287,7 @@ function TwoSideRangePicker() {
                             getRenderedMonth() === month.monthNumber
                               ? "#cacaca"
                               : "#fff",
-                          padding: "1px 5px",
+                          padding: "5px 0",
                         }}
                       >
                         <button
@@ -353,7 +353,7 @@ function TwoSideRangePicker() {
                         style={{
                           backgroundColor:
                             getRenderedYear() === year ? "#cacaca" : "#fafafa",
-                          padding: "1px 0px",
+                          padding: "5px 0px",
                           textAlign: "center",
                           width: "19%",
                         }}

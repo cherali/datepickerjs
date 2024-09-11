@@ -249,7 +249,7 @@ function SimpleDatePicker() {
                             getRenderedMonth() === month.monthNumber
                               ? "#cacaca"
                               : "#fff",
-                          padding: "1px 5px",
+                          padding: "5px 0",
                         }}
                       >
                         <button
@@ -315,7 +315,7 @@ function SimpleDatePicker() {
                         style={{
                           backgroundColor:
                             getRenderedYear() === year ? "#cacaca" : "#fafafa",
-                          padding: "1px 0px",
+                          padding: "5px 0",
                           textAlign: "center",
                           width: "19%",
                         }}

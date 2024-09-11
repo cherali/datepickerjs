@@ -115,16 +115,10 @@ const getPickerColor = (
   day: Days,
   currentColor: string,
   selectColor: string,
-  hoveredColor: string,
   otherColor: string,
 ) => {
   if (isSelectedDay(day.date) && day.state === "current") return selectColor;
-  else if (
-    !isSelecting() &&
-    isDateInRange(day.date) &&
-    day.state === "current"
-  )
-    return hoveredColor;
+
   else if (day.state === "current") return currentColor;
   else return otherColor;
 };
@@ -136,7 +130,7 @@ const dayStyle = (day: Days) => ({
     "#2cf2f2",
     "#d8d8d8",
   ),
-  color: getPickerColor(day, "#000", "#099090", "#066060", "#888"),
+  color: getPickerColor(day, "#000", "#099090", "#888"),
   width: "100%",
   border: "none",
   padding: "5px 0",
@@ -202,7 +196,7 @@ function getDateRef() {
         <div style="width: 100%; margin: 0 auto;">
           <div :style="{ overflow: 'auto', height: `${datepickerHeight}px` }">
             <div v-for="month in getMonthList()" :key="month.name"
-              :style="{ backgroundColor: getRenderedMonth() === month.monthNumber ? '#cacaca' : '#fff', padding: '1px 5px' }">
+              :style="{ backgroundColor: getRenderedMonth() === month.monthNumber ? '#cacaca' : '#fff', padding: '5px 0' }">
               <button style="width: 100%; padding: 0; margin: 0; background-color: transparent; border: none;"
                 @click="changeMonth(month.monthNumber)">
                 <span>{{ month.name }}</span>
@@ -237,7 +231,7 @@ function getDateRef() {
           <div
             :style="{ height: `${datepickerHeight}px`, display: 'flex', overflow: 'auto', flexWrap: 'wrap', gap: 3 }">
             <div v-for="year in getYearsList(1950, 2050)" :key="year"
-              :style="{ backgroundColor: getRenderedYear() === year ? '#cacaca' : '#fafafa', padding: '1px 0', textAlign: 'center', width: '19%' }">
+              :style="{ backgroundColor: getRenderedYear() === year ? '#cacaca' : '#fafafa', padding: '5px 0', textAlign: 'center', width: '19%' }">
               <button @click="changeYear(year)"
                 :style="{ backgroundColor: 'transparent', border: 'none', color: getRenderedYear() === year ? 'black' : '#808080' }">
                 {{ year }}
