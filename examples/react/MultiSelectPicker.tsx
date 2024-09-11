@@ -214,7 +214,7 @@ function MultiSelectPickerExample() {
   });
 
   const changeDayClick = (date, state) => (evt: MouseEvent) => {
-    if (evt.shiftKey) {
+    if (evt.ctrlKey) {
       selectInRange(date, state);
     } else {
       changeDay(date);

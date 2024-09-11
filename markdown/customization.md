@@ -38,8 +38,8 @@ MultiSelectPicker
 
 ## MultiSelectPicker Range Selection
 
-By holding `shiftKey` you can select range of date, this behavior can be disabled or if you don't like to use `shiftKey` you can change it to any key, like `Alt+f4` just for fun :))) <br>
-Just search for `shiftKey` in [examples](../examples) and change the key or remove that part.
+By holding `ctrlKey` you can select range of date, this behavior can be disabled or if you don't like to use `ctrlKey` you can change it to any key, like `Alt+f4` just for fun :))) <br>
+Just search for `ctrlKey` in [examples](../examples) and change the key or remove that part.
 
 ## Custom event
 

@@ -357,7 +357,7 @@ function picker() {
   };
 
   const onDayClicked = (date, state) => (evt: Event) => {
-    if ((evt as PointerEvent).shiftKey) {
+    if ((evt as PointerEvent).ctrlKey) {
       selectInRange(date, state);
     } else {
       changeDay(date);
@@ -378,7 +378,7 @@ function picker() {
   };
 
   const handleHoverCell = date => (evt: Event) => {
-    if ((evt as PointerEvent).shiftKey && isSelecting()) {
+    if ((evt as PointerEvent).ctrlKey && isSelecting()) {
       onCellHover(date);
     }
   };

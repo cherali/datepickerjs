@@ -32,7 +32,7 @@ This package use JS `new Date()` to create dates and stores date based on gregor
 - Available Pickers: `DatePicker`, `RangePicker`, `MultiSelectPicker`
 
 You can create your `custom event` and show it anywhere you want [check this](./markdown/customization.md#custom-event), <br>
-Also with MultiSelectPicker you can select range of dates by holding `shiftKey` [see customization for more info](./markdown/customization.md#multiselectpicker-range-selection)
+Also with MultiSelectPicker you can select range of dates by holding `ctrlKey` [see customization for more info](./markdown/customization.md#multiselectpicker-range-selection)
 
 ## Notes
 
