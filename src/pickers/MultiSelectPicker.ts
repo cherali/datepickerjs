@@ -169,62 +169,7 @@ class MultiSelectPicker extends BasePicker implements IMultiSelectPicker {
    */
   public selectInRange(date: string, state: DaysStateTypes) {
     if (isValidDateFormat(date)) {
-      let isCurrent = state === "current";
-
-      if (this._twoSide && this._dayRenderType === "fill" && this._normalized) {
-        const current = this._days.find(f => f.date === date);
-        const next = this.getDays("next").find(f => f.date === date);
-        isCurrent =
-          Boolean(current?.state === "current" || current?.state === "next") ||
-          Boolean(next?.state === "current" || next?.state === "prev");
-      }
-
-      if (this._dayRenderType === "fill" && !isCurrent) {
-        this._forceLoadingStart();
-      }
-
-      const pickerState = this._state;
-
-      if (this._selectedDate && this._selectedEndDate) {
-        this._selectedEndDate = undefined;
-        this._hoveredDate = undefined;
-      }
-
-      if (
-        pickerState === "rendered" ||
-        createDate(this._selectedDate).getTime() > createDate(date).getTime()
-      ) {
-        this._selectedDate = date;
-        this._state = "selecting";
-      } else if (pickerState === "selecting") {
-        this._selectedEndDate = date;
-        this._state = "rendered";
-      }
-
-      let updateDate = date;
-
-      if (this._normalized) {
-        const renderedDate = this._calculateRenderedDate(
-          date,
-          this._normalized,
-          this._twoSide,
-          this._dateFormatter,
-        );
-        updateDate = renderedDate;
-      }
-
-      this._renderedDate = updateDate;
-
-      this._days = this._calculateDays(updateDate);
-
-      this.emit("changeDate", formatDate(createDate(updateDate)));
-
-      if (!isCurrent && this._dayRenderType === "fill") {
-        if (this._selectedDate && !this._selectedEndDate) {
-          this._selectedEndDate = date;
-        }
-        this._updateChangeDay(date);
-      }
+      this._rangeSelection(date, state);
 
       const lookup = new Map<string, number>();
 
@@ -243,11 +188,100 @@ class MultiSelectPicker extends BasePicker implements IMultiSelectPicker {
   }
 
   /**
+   * {@inheritdoc IMultiSelectPicker.deSelectInRange}
+   * @public
+   */
+  public deSelectInRange(date: string, state: DaysStateTypes) {
+    if (isValidDateFormat(date)) {
+      this._rangeSelection(date, state);
+
+      const lookup = new Map<string, number>();
+
+      this._getDatesInRange(
+        this._selectedDate,
+        this._selectedEndDate || this._selectedDate,
+      ).forEach(day => {
+        lookup.set(day, 1);
+      });
+
+      const dates = new Map([...this._selectedDatesLookup]);
+
+      for (const [key] of lookup) {
+        if (dates.has(key)) {
+          dates.delete(key);
+        }
+      }
+
+      this._selectedDatesLookup = dates;
+    }
+  }
+
+  /**
    * {@inheritdoc IBasePickerAbs.isSelectedDay}
    * @public
    */
   public isSelectedDay(date: string) {
     return this._selectedDatesLookup.has(date);
+  }
+
+  /** @internal */
+  private _rangeSelection(date: string, state: DaysStateTypes) {
+    let isCurrent = state === "current";
+
+    if (this._twoSide && this._dayRenderType === "fill" && this._normalized) {
+      const current = this._days.find(f => f.date === date);
+      const next = this.getDays("next").find(f => f.date === date);
+      isCurrent =
+        Boolean(current?.state === "current" || current?.state === "next") ||
+        Boolean(next?.state === "current" || next?.state === "prev");
+    }
+
+    if (this._dayRenderType === "fill" && !isCurrent) {
+      this._forceLoadingStart();
+    }
+
+    const pickerState = this._state;
+
+    if (this._selectedDate || this._selectedEndDate) {
+      this._selectedEndDate = undefined;
+      this._hoveredDate = undefined;
+    }
+
+    if (
+      pickerState === "rendered" ||
+      createDate(this._selectedDate).getTime() > createDate(date).getTime()
+    ) {
+      this._selectedDate = date;
+      this._state = "selecting";
+    } else if (pickerState === "selecting") {
+      this._selectedEndDate = date;
+      this._state = "rendered";
+    }
+
+    let updateDate = date;
+
+    if (this._normalized) {
+      const renderedDate = this._calculateRenderedDate(
+        date,
+        this._normalized,
+        this._twoSide,
+        this._dateFormatter,
+      );
+      updateDate = renderedDate;
+    }
+
+    this._renderedDate = updateDate;
+
+    this._days = this._calculateDays(updateDate);
+
+    this.emit("changeDate", formatDate(createDate(updateDate)));
+
+    if (!isCurrent && this._dayRenderType === "fill") {
+      if (this._selectedDate && !this._selectedEndDate) {
+        this._selectedEndDate = date;
+      }
+      this._updateChangeDay(date);
+    }
   }
 
   /** @internal */

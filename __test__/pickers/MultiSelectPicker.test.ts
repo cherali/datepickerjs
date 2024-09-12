@@ -100,6 +100,18 @@ describe("Testing `MultiSelectPicker` Functionality", () => {
     test(`Test if 2024-09-12 is selected, most return true`, () => {
       expect(picker2.getSelectedDates().has(date)).toBe(true);
     });
+
+    test("Test for range deselection", () => {
+      picker2.selectInRange("2024-09-08", "current");
+      picker2.selectInRange("2024-09-20", "current");
+
+      expect(picker2.getSelectedDates().has("2024-09-15")).toBe(true);
+
+      picker2.deSelectInRange("2024-09-10", "current");
+      picker2.deSelectInRange("2024-09-18", "current");
+
+      expect(picker2.getSelectedDates().has("2024-09-15")).toBe(false);
+    });
   });
 
   describe("Testing Date", () => {

@@ -67,6 +67,14 @@ export interface IMultiSelectPicker {
   isSelecting(): boolean;
 
   /**
+   * Use to de select dates in range
+   *
+   * @param date - date as `YYYY-MM-DD`
+   * @param state - day state
+   */
+  deSelectInRange(date: string, state: DaysStateTypes): void;
+
+  /**
    * Get end Date
    */
   getEndDate(): string;
