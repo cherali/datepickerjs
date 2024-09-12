@@ -18,26 +18,32 @@ export declare function isValidDateFormat(date?: string): boolean;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 date
 
+
 </td><td>
 
 string
 
+
 </td><td>
 
 _(Optional)_ date as string with YYYY-MM-DD
+
 
 </td></tr>
 </tbody></table>
@@ -46,3 +52,4 @@ _(Optional)_ date as string with YYYY-MM-DD
 boolean
 
 return true or false
+

@@ -11,7 +11,7 @@ Get Render year
 ```typescript
 getRenderedYear(): number;
 ```
-
 **Returns:**
 
 number
+

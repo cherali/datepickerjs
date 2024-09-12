@@ -11,7 +11,7 @@ Check if state of picker is 'selecting'
 ```typescript
 isSelecting(): boolean;
 ```
-
 **Returns:**
 
 boolean
+

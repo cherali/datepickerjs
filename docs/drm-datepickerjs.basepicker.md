@@ -9,9 +9,8 @@ A helper class to help speed up implementation of pickers
 **Signature:**
 
 ```typescript
-export declare abstract class BasePicker extends EventEmitter<string, PickerEvents> implements IBasePicker
+export declare abstract class BasePicker extends EventEmitter<string, PickerEvents> implements IBasePicker 
 ```
-
 **Extends:** [EventEmitter](./drm-datepickerjs.eventemitter.md)<!-- -->&lt;string, [PickerEvents](./drm-datepickerjs.pickerevents.md)<!-- -->&gt;
 
 **Implements:** [IBasePicker](./drm-datepickerjs.ibasepicker.md)
@@ -22,24 +21,30 @@ export declare abstract class BasePicker extends EventEmitter<string, PickerEven
 
 Constructor
 
+
 </th><th>
 
 Modifiers
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [(constructor)(props)](./drm-datepickerjs.basepicker._constructor_.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Constructs a new instance of the `BasePicker` class
+
 
 </td></tr>
 </tbody></table>
@@ -50,321 +55,408 @@ Constructs a new instance of the `BasePicker` class
 
 Method
 
+
 </th><th>
 
 Modifiers
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [changeMonth(month, forceClosing)](./drm-datepickerjs.basepicker.changemonth.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Use to change month
+
 
 </td></tr>
 <tr><td>
 
 [changeYear(year, forceClosing)](./drm-datepickerjs.basepicker.changeyear.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Use to change year
+
 
 </td></tr>
 <tr><td>
 
 [getDate()](./drm-datepickerjs.basepicker.getdate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get formatted date as `YYYY-MM-DD`
+
 
 </td></tr>
 <tr><td>
 
 [getDayMonthOffset(index)](./drm-datepickerjs.basepicker.getdaymonthoffset.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Used to get difference between first weekday and 1st month start day
+
 
 </td></tr>
 <tr><td>
 
 [getDays(monthSate)](./drm-datepickerjs.basepicker.getdays.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Return list of days
+
 
 </td></tr>
 <tr><td>
 
 [getMode()](./drm-datepickerjs.basepicker.getmode.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get Picker mode
+
 
 </td></tr>
 <tr><td>
 
 [getMonthList()](./drm-datepickerjs.basepicker.getmonthlist.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Return list of months,
+
 
 </td></tr>
 <tr><td>
 
 [getPickerState()](./drm-datepickerjs.basepicker.getpickerstate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Return picker state
+
 
 </td></tr>
 <tr><td>
 
 [getRenderedDateOriginal()](./drm-datepickerjs.basepicker.getrendereddateoriginal.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get rendered date - unformatted
+
 
 </td></tr>
 <tr><td>
 
 [getRenderedMonth()](./drm-datepickerjs.basepicker.getrenderedmonth.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get Render Month number
+
 
 </td></tr>
 <tr><td>
 
 [getRenderedMonthName()](./drm-datepickerjs.basepicker.getrenderedmonthname.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get Render month name
+
 
 </td></tr>
 <tr><td>
 
 [getRenderedNextDateYear()](./drm-datepickerjs.basepicker.getrenderednextdateyear.md)
 
+
 </td><td>
+
 
 </td><td>
 
 get Render next date year - used when `twoSide` is true
+
 
 </td></tr>
 <tr><td>
 
 [getRenderedNextMonth()](./drm-datepickerjs.basepicker.getrenderednextmonth.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get Render next month number - used when `twoSide` is true
+
 
 </td></tr>
 <tr><td>
 
 [getRenderedNextMonthName()](./drm-datepickerjs.basepicker.getrenderednextmonthname.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get Render next month name - used when `twoSide` is true
+
 
 </td></tr>
 <tr><td>
 
 [getRenderedYear()](./drm-datepickerjs.basepicker.getrenderedyear.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get Render year
+
 
 </td></tr>
 <tr><td>
 
 [getSelectedDateOriginal()](./drm-datepickerjs.basepicker.getselecteddateoriginal.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get selected date - unformatted
+
 
 </td></tr>
 <tr><td>
 
 [getYearsList(minimumYear, maximumYear)](./drm-datepickerjs.basepicker.getyearslist.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get years list
+
 
 </td></tr>
 <tr><td>
 
 [goToToday()](./drm-datepickerjs.basepicker.gototoday.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Go to today date
+
 
 </td></tr>
 <tr><td>
 
 [handleShowNextMonth()](./drm-datepickerjs.basepicker.handleshownextmonth.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Use to navigate to next month
+
 
 </td></tr>
 <tr><td>
 
 [handleShowNextYear()](./drm-datepickerjs.basepicker.handleshownextyear.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Use to navigate next year
+
 
 </td></tr>
 <tr><td>
 
 [handleShowPrevMonth()](./drm-datepickerjs.basepicker.handleshowprevmonth.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Use to navigate prev month
+
 
 </td></tr>
 <tr><td>
 
 [handleShowPrevYear()](./drm-datepickerjs.basepicker.handleshowprevyear.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Use to navigate prev year
+
 
 </td></tr>
 <tr><td>
 
 [isLoading()](./drm-datepickerjs.basepicker.isloading.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Returns picker loading state
+
 
 </td></tr>
 <tr><td>
 
 [isOpen()](./drm-datepickerjs.basepicker.isopen.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get if picker is open
+
 
 </td></tr>
 <tr><td>
 
 [onChangeDate(cb)](./drm-datepickerjs.basepicker.onchangedate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 A callback used to update picker
+
 
 </td></tr>
 <tr><td>
 
 [setDate(date)](./drm-datepickerjs.basepicker.setdate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Set selected date directly.
+
 
 </td></tr>
 <tr><td>
 
 [setMode(mode)](./drm-datepickerjs.basepicker.setmode.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Change picker mode
+
 
 </td></tr>
 <tr><td>
 
 [setOpen(open)](./drm-datepickerjs.basepicker.setopen.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Change open state of Picker
+
 
 </td></tr>
 </tbody></table>

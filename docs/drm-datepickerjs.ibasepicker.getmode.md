@@ -11,7 +11,7 @@ Get Picker mode
 ```typescript
 getMode(): PickerMode;
 ```
-
 **Returns:**
 
 [PickerMode](./drm-datepickerjs.pickermode.md)
+

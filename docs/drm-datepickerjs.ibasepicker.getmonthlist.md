@@ -11,7 +11,7 @@ Return list of months,
 ```typescript
 getMonthList(): MonthListObject[];
 ```
-
 **Returns:**
 
 [MonthListObject](./drm-datepickerjs.monthlistobject.md)<!-- -->\[\]
+

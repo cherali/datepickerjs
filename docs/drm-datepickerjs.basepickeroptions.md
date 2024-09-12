@@ -9,7 +9,7 @@ BasePicker and DatePicker constructor inputs.
 **Signature:**
 
 ```typescript
-export interface BasePickerOptions
+export interface BasePickerOptions 
 ```
 
 ## Properties
@@ -18,73 +18,92 @@ export interface BasePickerOptions
 
 Property
 
+
 </th><th>
 
 Modifiers
+
 
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [date?](./drm-datepickerjs.basepickeroptions.date.md)
 
+
 </td><td>
+
 
 </td><td>
 
 string
 
+
 </td><td>
 
 _(Optional)_ Initial date
+
 
 </td></tr>
 <tr><td>
 
 [dateFormatter?](./drm-datepickerjs.basepickeroptions.dateformatter.md)
 
+
 </td><td>
+
 
 </td><td>
 
 [DateFormatterType](./drm-datepickerjs.dateformattertype.md)
 
+
 </td><td>
 
 _(Optional)_ pass date from custom formatter, used to support localization
+
 
 </td></tr>
 <tr><td>
 
 [datePickerAutoRow?](./drm-datepickerjs.basepickeroptions.datepickerautorow.md)
 
+
 </td><td>
+
 
 </td><td>
 
 boolean
 
+
 </td><td>
 
 _(Optional)_ Use to calculate next and prev month to fill days array.
+
 
 </td></tr>
 <tr><td>
 
 [datePickerMaxRow?](./drm-datepickerjs.basepickeroptions.datepickermaxrow.md)
 
+
 </td><td>
+
 
 </td><td>
 
 number
+
 
 </td><td>
 
@@ -92,16 +111,20 @@ _(Optional)_ Use to extend picker rows
 
 Not recommended set this more than 11, for most of usage leave this flag alone!!, and if you set this don't forget to enable auto row
 
+
 </td></tr>
 <tr><td>
 
 [dayRenderType?](./drm-datepickerjs.basepickeroptions.dayrendertype.md)
 
+
 </td><td>
+
 
 </td><td>
 
 [PickerDayRenderType](./drm-datepickerjs.pickerdayrendertype.md)
+
 
 </td><td>
 
@@ -109,46 +132,77 @@ _(Optional)_ If 1st of a month does'nt start form first weekday, whether `fill` 
 
 available: `fill`<!-- -->, `space`
 
+
 </td></tr>
 <tr><td>
 
 [delayTimeout?](./drm-datepickerjs.basepickeroptions.delaytimeout.md)
 
+
 </td><td>
+
 
 </td><td>
 
 number
 
+
 </td><td>
 
 _(Optional)_ Create delay if you want, this can be used to manipulate UI/UX!.
+
 
 </td></tr>
 <tr><td>
 
 [locale](./drm-datepickerjs.basepickeroptions.locale.md)
 
+
 </td><td>
+
 
 </td><td>
 
 [PickerLocale](./drm-datepickerjs.pickerlocale.md)
 
+
 </td><td>
 
 locale function to pass months to picker
+
+
+</td></tr>
+<tr><td>
+
+[mode?](./drm-datepickerjs.basepickeroptions.mode.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[PickerMode](./drm-datepickerjs.pickermode.md)
+
+
+</td><td>
+
+_(Optional)_ Set picker mode
+
 
 </td></tr>
 <tr><td>
 
 [normalized?](./drm-datepickerjs.basepickeroptions.normalized.md)
 
+
 </td><td>
+
 
 </td><td>
 
 boolean
+
 
 </td><td>
 
@@ -160,50 +214,63 @@ If false the render month comes first and the next after monthStep is set to 1
 
 <em><strong>Set this flag to true for RangePicker</strong></em>
 
+
 </td></tr>
 <tr><td>
 
 [open?](./drm-datepickerjs.basepickeroptions.open.md)
 
+
 </td><td>
+
 
 </td><td>
 
 boolean
 
+
 </td><td>
 
 _(Optional)_ Whether the picker open or closed at start
+
 
 </td></tr>
 <tr><td>
 
 [twoSide?](./drm-datepickerjs.basepickeroptions.twoside.md)
 
+
 </td><td>
+
 
 </td><td>
 
 boolean
 
+
 </td><td>
 
 _(Optional)_ Calculate the next month, Used to show current and next month in one picker
+
 
 </td></tr>
 <tr><td>
 
 [weekOffset?](./drm-datepickerjs.basepickeroptions.weekoffset.md)
 
+
 </td><td>
+
 
 </td><td>
 
 number
 
+
 </td><td>
 
 _(Optional)_ Move backward and forward the days if first weekday not started form Sunday, mostly used for localization.
+
 
 </td></tr>
 </tbody></table>

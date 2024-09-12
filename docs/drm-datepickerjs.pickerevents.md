@@ -9,10 +9,5 @@ Picker events type
 **Signature:**
 
 ```typescript
-export type PickerEvents =
-  | "changeDate"
-  | "changeMode"
-  | "changeOpen"
-  | "changeState"
-  | "calculateDays";
+export type PickerEvents = "changeDate" | "changeMode" | "changeOpen" | "changeState" | "calculateDays";
 ```

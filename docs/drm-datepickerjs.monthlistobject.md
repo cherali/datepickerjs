@@ -10,8 +10,8 @@ Type of item that getMonthList function returns
 
 ```typescript
 export type MonthListObject = Month & {
-  monthNumber: number;
+    monthNumber: number;
 };
 ```
-
 **References:** [Month](./drm-datepickerjs.month.md)
+

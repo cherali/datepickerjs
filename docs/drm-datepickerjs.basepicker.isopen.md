@@ -11,7 +11,7 @@ Get if picker is open
 ```typescript
 isOpen(): boolean;
 ```
-
 **Returns:**
 
 boolean
+

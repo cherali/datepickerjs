@@ -11,9 +11,9 @@ Returns picker loading state
 ```typescript
 isLoading(): boolean;
 ```
-
 **Returns:**
 
 boolean
 
 boolean
+

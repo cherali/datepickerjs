@@ -11,7 +11,7 @@ Clear selection Map
 ```typescript
 clearSelection(): void;
 ```
-
 **Returns:**
 
 void
+

@@ -11,7 +11,7 @@ Get end Date
 ```typescript
 getEndDate(): string;
 ```
-
 **Returns:**
 
 string
+

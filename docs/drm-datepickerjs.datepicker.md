@@ -9,9 +9,8 @@ DatePicker is a simple picker. Used when a single selection date will suffice
 **Signature:**
 
 ```typescript
-declare class DatePicker extends BasePicker
+declare class DatePicker extends BasePicker 
 ```
-
 **Extends:** [BasePicker](./drm-datepickerjs.basepicker.md)
 
 ## Constructors
@@ -20,24 +19,30 @@ declare class DatePicker extends BasePicker
 
 Constructor
 
+
 </th><th>
 
 Modifiers
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [(constructor)(props)](./drm-datepickerjs.datepicker._constructor_.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Constructs a new instance of the `DatePicker` class
+
 
 </td></tr>
 </tbody></table>
@@ -48,35 +53,44 @@ Constructs a new instance of the `DatePicker` class
 
 Method
 
+
 </th><th>
 
 Modifiers
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [changeDay(date, state)](./drm-datepickerjs.datepicker.changeday.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Use to change date, (handler given to day)
+
 
 </td></tr>
 <tr><td>
 
 [isSelectedDay(date)](./drm-datepickerjs.datepicker.isselectedday.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Determine given date is selected or not
+
 
 </td></tr>
 </tbody></table>

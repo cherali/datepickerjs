@@ -11,7 +11,7 @@ Get rendered date - unformatted
 ```typescript
 getRenderedDateOriginal(): string;
 ```
-
 **Returns:**
 
 string
+

@@ -9,9 +9,8 @@ RangePicker constructor inputs
 **Signature:**
 
 ```typescript
-export interface RangePickerOptions extends BasePickerOptions
+export interface RangePickerOptions extends BasePickerOptions 
 ```
-
 **Extends:** [BasePickerOptions](./drm-datepickerjs.basepickeroptions.md)
 
 ## Properties
@@ -20,34 +19,42 @@ export interface RangePickerOptions extends BasePickerOptions
 
 Property
 
+
 </th><th>
 
 Modifiers
+
 
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [endDate?](./drm-datepickerjs.rangepickeroptions.enddate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 string
+
 
 </td><td>
 
 _(Optional)_ Use with date to mark a Range as selected by default
 
 \*<em>Set `date` props</em>
+
 
 </td></tr>
 </tbody></table>

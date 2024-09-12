@@ -18,29 +18,36 @@ export declare function validateDate(date: string): void;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 date
 
+
 </td><td>
 
 string
 
+
 </td><td>
 
 date as string with YYYY-MM-DD
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 void
+

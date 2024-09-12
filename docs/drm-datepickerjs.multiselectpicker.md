@@ -9,9 +9,8 @@ Multi Select picker allows user to select more than one date.
 **Signature:**
 
 ```typescript
-declare class MultiSelectPicker extends BasePicker implements IMultiSelectPicker
+declare class MultiSelectPicker extends BasePicker implements IMultiSelectPicker 
 ```
-
 **Extends:** [BasePicker](./drm-datepickerjs.basepicker.md)
 
 **Implements:** [IMultiSelectPicker](./drm-datepickerjs.imultiselectpicker.md)
@@ -22,24 +21,30 @@ declare class MultiSelectPicker extends BasePicker implements IMultiSelectPicker
 
 Constructor
 
+
 </th><th>
 
 Modifiers
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [(constructor)(props)](./drm-datepickerjs.multiselectpicker._constructor_.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Constructs a new instance of the `MultiSelectPicker` class
+
 
 </td></tr>
 </tbody></table>
@@ -50,200 +55,268 @@ Constructs a new instance of the `MultiSelectPicker` class
 
 Method
 
+
 </th><th>
 
 Modifiers
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [addDate(date)](./drm-datepickerjs.multiselectpicker.adddate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Add to selection Map
+
 
 </td></tr>
 <tr><td>
 
 [changeDay(date)](./drm-datepickerjs.multiselectpicker.changeday.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Use to change date, (handler given to day)
+
 
 </td></tr>
 <tr><td>
 
 [clearSelection()](./drm-datepickerjs.multiselectpicker.clearselection.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Clear selection Map
+
+
+</td></tr>
+<tr><td>
+
+[deSelectInRange(date, state)](./drm-datepickerjs.multiselectpicker.deselectinrange.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Use to de select dates in range
+
 
 </td></tr>
 <tr><td>
 
 [getEndDate()](./drm-datepickerjs.multiselectpicker.getenddate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get end Date
+
 
 </td></tr>
 <tr><td>
 
 [getFirstSelectedDate()](./drm-datepickerjs.multiselectpicker.getfirstselecteddate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 If selection map is not empty returns first item - formatted
+
 
 </td></tr>
 <tr><td>
 
 [getFirstSelectedDateUnformatted()](./drm-datepickerjs.multiselectpicker.getfirstselecteddateunformatted.md)
 
+
 </td><td>
+
 
 </td><td>
 
 If selection map is not empty returns first item - unformatted
+
 
 </td></tr>
 <tr><td>
 
 [getSelectedDates()](./drm-datepickerjs.multiselectpicker.getselecteddates.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Get selected dates as a Map
+
 
 </td></tr>
 <tr><td>
 
 [goToToday()](./drm-datepickerjs.multiselectpicker.gototoday.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Go to today date
+
 
 </td></tr>
 <tr><td>
 
 [isDateInRange(date, includeStart, includeEnd)](./drm-datepickerjs.multiselectpicker.isdateinrange.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Check if date input is in range - used for styling
+
 
 </td></tr>
 <tr><td>
 
 [isEndDate(date)](./drm-datepickerjs.multiselectpicker.isenddate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Check if date input equals to end date
+
 
 </td></tr>
 <tr><td>
 
 [isSelectedDay(date)](./drm-datepickerjs.multiselectpicker.isselectedday.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Determine given date is selected or not
+
 
 </td></tr>
 <tr><td>
 
 [isSelecting()](./drm-datepickerjs.multiselectpicker.isselecting.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Check if state of picker is 'selecting'
+
 
 </td></tr>
 <tr><td>
 
 [isStartDate(date)](./drm-datepickerjs.multiselectpicker.isstartdate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Check if date input equals to start date
+
 
 </td></tr>
 <tr><td>
 
 [onCellHover(date)](./drm-datepickerjs.multiselectpicker.oncellhover.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Called on picker cell hover.
+
 
 </td></tr>
 <tr><td>
 
 [removeDate(date)](./drm-datepickerjs.multiselectpicker.removedate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Remove from selection Map
+
 
 </td></tr>
 <tr><td>
 
 [selectInRange(date, state)](./drm-datepickerjs.multiselectpicker.selectinrange.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Use to range selection
+
 
 </td></tr>
 <tr><td>
 
 [toggleDate(date)](./drm-datepickerjs.multiselectpicker.toggledate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Add or remove from selection Map
+
 
 </td></tr>
 </tbody></table>

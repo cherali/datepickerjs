@@ -11,7 +11,7 @@ Get selected dates as a Map
 ```typescript
 getSelectedDates(): Map<string, number>;
 ```
-
 **Returns:**
 
 Map&lt;string, number&gt;
+

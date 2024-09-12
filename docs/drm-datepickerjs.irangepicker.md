@@ -9,7 +9,7 @@ Extra methods most implements by RangePicker
 **Signature:**
 
 ```typescript
-export interface IRangePicker
+export interface IRangePicker 
 ```
 
 ## Methods
@@ -18,90 +18,110 @@ export interface IRangePicker
 
 Method
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [getEndDate()](./drm-datepickerjs.irangepicker.getenddate.md)
 
+
 </td><td>
 
 Get end Date
+
 
 </td></tr>
 <tr><td>
 
 [getSelectedEndDate()](./drm-datepickerjs.irangepicker.getselectedenddate.md)
 
+
 </td><td>
 
 Get formatted selected date
+
 
 </td></tr>
 <tr><td>
 
 [getSelectedEndDateUnformatted()](./drm-datepickerjs.irangepicker.getselectedenddateunformatted.md)
 
+
 </td><td>
 
 Get selected end date unformatted
+
 
 </td></tr>
 <tr><td>
 
 [isDateInRange(date, includeStart, includeEnd)](./drm-datepickerjs.irangepicker.isdateinrange.md)
 
+
 </td><td>
 
 Check if date input is in range - used for styling
+
 
 </td></tr>
 <tr><td>
 
 [isEndDate(date)](./drm-datepickerjs.irangepicker.isenddate.md)
 
+
 </td><td>
 
 Check if date input equals to end date
+
 
 </td></tr>
 <tr><td>
 
 [isSelecting()](./drm-datepickerjs.irangepicker.isselecting.md)
 
+
 </td><td>
 
 Check if state of picker is 'selecting'
+
 
 </td></tr>
 <tr><td>
 
 [isStartDate(date)](./drm-datepickerjs.irangepicker.isstartdate.md)
 
+
 </td><td>
 
 Check if date input equals to start date
+
 
 </td></tr>
 <tr><td>
 
 [onCellHover(date)](./drm-datepickerjs.irangepicker.oncellhover.md)
 
+
 </td><td>
 
 Called on picker cell hover.
+
 
 </td></tr>
 <tr><td>
 
 [setEndDate(date)](./drm-datepickerjs.irangepicker.setenddate.md)
 
+
 </td><td>
 
 Set selected end date directly.
+
 
 </td></tr>
 </tbody></table>

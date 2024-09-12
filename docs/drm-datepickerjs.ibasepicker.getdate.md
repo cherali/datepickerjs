@@ -11,7 +11,7 @@ Get formatted date as `YYYY-MM-DD`
 ```typescript
 getDate(): string;
 ```
-
 **Returns:**
 
 string
+

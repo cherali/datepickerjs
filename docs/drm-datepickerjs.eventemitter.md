@@ -11,7 +11,7 @@ Type of Events that match a string to a callback, one key - one listener
 **Signature:**
 
 ```typescript
-export declare class EventEmitter<T extends string, K extends string>
+export declare class EventEmitter<T extends string, K extends string> 
 ```
 
 ## Constructors
@@ -20,24 +20,30 @@ export declare class EventEmitter<T extends string, K extends string>
 
 Constructor
 
+
 </th><th>
 
 Modifiers
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [(constructor)()](./drm-datepickerjs.eventemitter._constructor_.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Constructs a new instance of the `EventEmitter` class
+
 
 </td></tr>
 </tbody></table>
@@ -48,49 +54,64 @@ Constructs a new instance of the `EventEmitter` class
 
 Method
 
+
 </th><th>
 
 Modifiers
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [dispose()](./drm-datepickerjs.eventemitter.dispose.md)
 
-</td><td>
 
 </td><td>
+
+
+</td><td>
+
 
 </td></tr>
 <tr><td>
 
 [emit(eventName, data)](./drm-datepickerjs.eventemitter.emit.md)
 
-</td><td>
 
 </td><td>
+
+
+</td><td>
+
 
 </td></tr>
 <tr><td>
 
 [off(eventName)](./drm-datepickerjs.eventemitter.off.md)
 
-</td><td>
 
 </td><td>
+
+
+</td><td>
+
 
 </td></tr>
 <tr><td>
 
 [on(eventName, listener)](./drm-datepickerjs.eventemitter.on.md)
 
-</td><td>
 
 </td><td>
+
+
+</td><td>
+
 
 </td></tr>
 </tbody></table>

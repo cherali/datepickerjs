@@ -11,7 +11,7 @@ Get selected end date unformatted
 ```typescript
 getSelectedEndDateUnformatted(): string | undefined;
 ```
-
 **Returns:**
 
 string \| undefined
+

@@ -9,9 +9,8 @@ MultiSelect constructor inputs
 **Signature:**
 
 ```typescript
-export interface MultiSelectPickerOptions extends BasePickerOptions
+export interface MultiSelectPickerOptions extends BasePickerOptions 
 ```
-
 **Extends:** [BasePickerOptions](./drm-datepickerjs.basepickeroptions.md)
 
 ## Properties
@@ -20,28 +19,35 @@ export interface MultiSelectPickerOptions extends BasePickerOptions
 
 Property
 
+
 </th><th>
 
 Modifiers
+
 
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [endDate?](./drm-datepickerjs.multiselectpickeroptions.enddate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 string
+
 
 </td><td>
 
@@ -51,20 +57,25 @@ _(Optional)_ Use with date to mark a Range as selected by default
 
 \*\* <em><strong>If `date` and `endDate` the range will marked as selected</strong></em>
 
+
 </td></tr>
 <tr><td>
 
 [selectedDate?](./drm-datepickerjs.multiselectpickeroptions.selecteddate.md)
 
+
 </td><td>
+
 
 </td><td>
 
 Map&lt;string, number&gt;
 
+
 </td><td>
 
 _(Optional)_ Use to mark selected some date by default
+
 
 </td></tr>
 </tbody></table>

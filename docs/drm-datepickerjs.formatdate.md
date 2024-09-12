@@ -18,26 +18,32 @@ export declare function formatDate(date?: Date): string;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 date
 
+
 </td><td>
 
 Date
 
+
 </td><td>
 
 _(Optional)_ date as string with YYYY-MM-DD
+
 
 </td></tr>
 </tbody></table>
@@ -46,3 +52,4 @@ _(Optional)_ date as string with YYYY-MM-DD
 string
 
 empty if called with no input, otherwise returns date in YYYY-MM-DD format
+

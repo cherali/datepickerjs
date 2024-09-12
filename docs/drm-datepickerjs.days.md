@@ -9,7 +9,7 @@ The day object that getDays function returns
 **Signature:**
 
 ```typescript
-export interface Days
+export interface Days 
 ```
 
 ## Properties
@@ -18,56 +18,72 @@ export interface Days
 
 Property
 
+
 </th><th>
 
 Modifiers
+
 
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [date](./drm-datepickerjs.days.date.md)
 
+
 </td><td>
+
 
 </td><td>
 
 string
 
+
 </td><td>
+
 
 </td></tr>
 <tr><td>
 
 [day](./drm-datepickerjs.days.day.md)
 
+
 </td><td>
+
 
 </td><td>
 
 number
 
+
 </td><td>
+
 
 </td></tr>
 <tr><td>
 
 [state](./drm-datepickerjs.days.state.md)
 
+
 </td><td>
+
 
 </td><td>
 
 [DaysStateTypes](./drm-datepickerjs.daysstatetypes.md)
 
+
 </td><td>
+
 
 </td></tr>
 </tbody></table>

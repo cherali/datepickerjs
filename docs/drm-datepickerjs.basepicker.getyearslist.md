@@ -18,39 +18,48 @@ getYearsList(minimumYear: number, maximumYear: number): Array<number>;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 minimumYear
 
+
 </td><td>
 
 number
 
+
 </td><td>
 
 Minimum Year you want to show.
+
 
 </td></tr>
 <tr><td>
 
 maximumYear
 
+
 </td><td>
 
 number
 
+
 </td><td>
 
 Maximum Year you want to show.
+
 
 </td></tr>
 </tbody></table>
@@ -59,3 +68,4 @@ Maximum Year you want to show.
 Array&lt;number&gt;
 
 list of number between Minimum and Maximum year.
+

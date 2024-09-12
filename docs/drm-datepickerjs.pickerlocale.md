@@ -11,5 +11,5 @@ use for typing locale fn
 ```typescript
 export type PickerLocale = (year: number) => LocaleProps;
 ```
-
 **References:** [LocaleProps](./drm-datepickerjs.localeprops.md)
+

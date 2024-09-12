@@ -16,38 +16,48 @@ on<P extends T>(eventName: K, listener: EventCallBackType<T & P>): void;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 eventName
 
+
 </td><td>
 
 K
 
+
 </td><td>
+
 
 </td></tr>
 <tr><td>
 
 listener
 
+
 </td><td>
 
 [EventCallBackType](./drm-datepickerjs.eventcallbacktype.md)<!-- -->&lt;T &amp; P&gt;
 
+
 </td><td>
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 void
+

@@ -11,7 +11,7 @@ Get selected date - unformatted
 ```typescript
 getSelectedDateOriginal(): string;
 ```
-
 **Returns:**
 
 string
+

@@ -11,7 +11,7 @@ Get Render month name
 ```typescript
 getRenderedMonthName(): string;
 ```
-
 **Returns:**
 
 string
+

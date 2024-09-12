@@ -11,7 +11,7 @@ Get formatted selected date
 ```typescript
 getSelectedEndDate(): string | undefined;
 ```
-
 **Returns:**
 
 string \| undefined
+

@@ -18,22 +18,27 @@ getDayMonthOffset(index?: 0 | 1): number;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 index
 
+
 </td><td>
 
 0 \| 1
+
 
 </td><td>
 
@@ -41,8 +46,10 @@ _(Optional)_ 0: current, 1: next \| '1' used when `twoSide` is true
 
 Always returns 0 if `dayRenderType` is `fill`
 
+
 </td></tr>
 </tbody></table>
 **Returns:**
 
 number
+

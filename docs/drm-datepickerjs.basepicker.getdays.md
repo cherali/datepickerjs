@@ -18,29 +18,36 @@ getDays(monthSate?: PickerMonthState): Days[];
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 monthSate
 
+
 </td><td>
 
 [PickerMonthState](./drm-datepickerjs.pickermonthstate.md)
 
+
 </td><td>
 
 _(Optional)_ Whether list of days for this month or next month.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [Days](./drm-datepickerjs.days.md)<!-- -->\[\]
+

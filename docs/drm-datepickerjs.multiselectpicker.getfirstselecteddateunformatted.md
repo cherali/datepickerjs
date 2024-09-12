@@ -11,7 +11,7 @@ If selection map is not empty returns first item - unformatted
 ```typescript
 getFirstSelectedDateUnformatted(): any;
 ```
-
 **Returns:**
 
 any
+

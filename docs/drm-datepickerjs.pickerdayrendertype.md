@@ -4,6 +4,7 @@
 
 ## PickerDayRenderType type
 
+
 **Signature:**
 
 ```typescript

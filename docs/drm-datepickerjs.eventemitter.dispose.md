@@ -9,7 +9,7 @@
 ```typescript
 dispose(): void;
 ```
-
 **Returns:**
 
 void
+

@@ -9,7 +9,7 @@ Extra methods most implements by MultiSelectPicker
 **Signature:**
 
 ```typescript
-export interface IMultiSelectPicker
+export interface IMultiSelectPicker 
 ```
 
 ## Methods
@@ -18,144 +18,187 @@ export interface IMultiSelectPicker
 
 Method
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [addDate(date)](./drm-datepickerjs.imultiselectpicker.adddate.md)
 
+
 </td><td>
 
 Add to selection Map
+
 
 </td></tr>
 <tr><td>
 
 [changeDay(date)](./drm-datepickerjs.imultiselectpicker.changeday.md)
 
+
 </td><td>
 
 Use to change date, (handler given to day)
+
 
 </td></tr>
 <tr><td>
 
 [clearSelection()](./drm-datepickerjs.imultiselectpicker.clearselection.md)
 
+
 </td><td>
 
 Clear selection Map
+
+
+</td></tr>
+<tr><td>
+
+[deSelectInRange(date, state)](./drm-datepickerjs.imultiselectpicker.deselectinrange.md)
+
+
+</td><td>
+
+Use to de select dates in range
+
 
 </td></tr>
 <tr><td>
 
 [getEndDate()](./drm-datepickerjs.imultiselectpicker.getenddate.md)
 
+
 </td><td>
 
 Get end Date
+
 
 </td></tr>
 <tr><td>
 
 [getFirstSelectedDate()](./drm-datepickerjs.imultiselectpicker.getfirstselecteddate.md)
 
+
 </td><td>
 
 If selection map is not empty returns first item - formatted
+
 
 </td></tr>
 <tr><td>
 
 [getFirstSelectedDateUnformatted()](./drm-datepickerjs.imultiselectpicker.getfirstselecteddateunformatted.md)
 
+
 </td><td>
 
 If selection map is not empty returns first item - unformatted
+
 
 </td></tr>
 <tr><td>
 
 [getSelectedDates()](./drm-datepickerjs.imultiselectpicker.getselecteddates.md)
 
+
 </td><td>
 
 Get selected dates as a Map
+
 
 </td></tr>
 <tr><td>
 
 [isDateInRange(date, includeStart, includeEnd)](./drm-datepickerjs.imultiselectpicker.isdateinrange.md)
 
+
 </td><td>
 
 Check if date input is in range - used for styling
+
 
 </td></tr>
 <tr><td>
 
 [isEndDate(date)](./drm-datepickerjs.imultiselectpicker.isenddate.md)
 
+
 </td><td>
 
 Check if date input equals to end date
+
 
 </td></tr>
 <tr><td>
 
 [isSelecting()](./drm-datepickerjs.imultiselectpicker.isselecting.md)
 
+
 </td><td>
 
 Check if state of picker is 'selecting'
+
 
 </td></tr>
 <tr><td>
 
 [isStartDate(date)](./drm-datepickerjs.imultiselectpicker.isstartdate.md)
 
+
 </td><td>
 
 Check if date input equals to start date
+
 
 </td></tr>
 <tr><td>
 
 [onCellHover(date)](./drm-datepickerjs.imultiselectpicker.oncellhover.md)
 
+
 </td><td>
 
 Called on picker cell hover.
+
 
 </td></tr>
 <tr><td>
 
 [removeDate(date)](./drm-datepickerjs.imultiselectpicker.removedate.md)
 
+
 </td><td>
 
 Remove from selection Map
+
 
 </td></tr>
 <tr><td>
 
 [selectInRange(date, state)](./drm-datepickerjs.imultiselectpicker.selectinrange.md)
 
+
 </td><td>
 
 Use to range selection
+
 
 </td></tr>
 <tr><td>
 
 [toggleDate(date)](./drm-datepickerjs.imultiselectpicker.toggledate.md)
 
+
 </td><td>
 
 Add or remove from selection Map
+
 
 </td></tr>
 </tbody></table>

@@ -18,29 +18,36 @@ isEndDate(date: string): boolean;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 date
 
+
 </td><td>
 
 string
 
+
 </td><td>
 
 date as `YYYY-MM-DD`
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 boolean
+

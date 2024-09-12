@@ -9,7 +9,7 @@ Base Picker abstract methods.
 **Signature:**
 
 ```typescript
-export interface IBasePickerAbs
+export interface IBasePickerAbs 
 ```
 
 ## Methods
@@ -18,27 +18,33 @@ export interface IBasePickerAbs
 
 Method
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 [changeDay(date, state)](./drm-datepickerjs.ibasepickerabs.changeday.md)
 
+
 </td><td>
 
 Use to change date, (handler given to day)
+
 
 </td></tr>
 <tr><td>
 
 [isSelectedDay(date)](./drm-datepickerjs.ibasepickerabs.isselectedday.md)
 
+
 </td><td>
 
 Determine given date is selected or not
+
 
 </td></tr>
 </tbody></table>

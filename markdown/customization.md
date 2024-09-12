@@ -41,6 +41,10 @@ MultiSelectPicker
 By holding `ctrlKey` you can select range of date, this behavior can be disabled or if you don't like to use `ctrlKey` you can change it to any key, like `Alt+f4` just for fun :))) <br>
 Just search for `ctrlKey` in [examples](../examples) and change the key or remove that part.
 
+## MultiSelectPicker Range De-Selection
+It's possible to de select in range by holding `shiftKey`, you can change this key if you want. <br>
+Just search for `shiftKey` in [examples](../examples) and change the key or remove that part.
+
 ## Custom event
 
 You can add any types of event to this picker for example this 2 events can be implemented

@@ -9,5 +9,5 @@ Use to create locale fn
 **Signature:**
 
 ```typescript
-export interface MonthsProps
+export interface MonthsProps 
 ```

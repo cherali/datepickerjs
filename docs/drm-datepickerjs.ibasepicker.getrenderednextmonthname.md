@@ -11,7 +11,7 @@ Get Render next month name - used when `twoSide` is true
 ```typescript
 getRenderedNextMonthName(): string;
 ```
-
 **Returns:**
 
 string
+

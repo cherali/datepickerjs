@@ -18,29 +18,36 @@ setOpen(open: boolean): void;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 open
 
+
 </td><td>
 
 boolean
 
+
 </td><td>
 
 true or false
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 void
+

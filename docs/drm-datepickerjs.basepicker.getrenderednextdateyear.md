@@ -11,7 +11,7 @@ get Render next date year - used when `twoSide` is true
 ```typescript
 getRenderedNextDateYear(): number;
 ```
-
 **Returns:**
 
 number
+

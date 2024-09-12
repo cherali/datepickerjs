@@ -11,7 +11,7 @@ Go to today date
 ```typescript
 goToToday(): void;
 ```
-
 **Returns:**
 
 void
+

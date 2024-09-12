@@ -18,55 +18,68 @@ isDateInRange(date: string, includeStart?: boolean, includeEnd?: boolean): boole
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 date
 
+
 </td><td>
 
 string
 
+
 </td><td>
 
 date as `YYYY-MM-DD`
+
 
 </td></tr>
 <tr><td>
 
 includeStart
 
+
 </td><td>
 
 boolean
 
+
 </td><td>
 
 _(Optional)_ Whether count start or not
+
 
 </td></tr>
 <tr><td>
 
 includeEnd
 
+
 </td><td>
 
 boolean
 
+
 </td><td>
 
 _(Optional)_ Whether count end or not
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 boolean
+

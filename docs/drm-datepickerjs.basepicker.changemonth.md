@@ -18,42 +18,52 @@ changeMonth(month: number, forceClosing?: boolean): void;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 month
 
+
 </td><td>
 
 number
 
+
 </td><td>
 
 month number
+
 
 </td></tr>
 <tr><td>
 
 forceClosing
 
+
 </td><td>
 
 boolean
 
+
 </td><td>
 
 _(Optional)_ by enable this picker will be closed after set month
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 void
+

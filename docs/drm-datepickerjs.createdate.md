@@ -18,26 +18,32 @@ export declare function createDate(date?: string): Date;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 date
 
+
 </td><td>
 
 string
 
+
 </td><td>
 
 _(Optional)_ date as string with YYYY-MM-DD
+
 
 </td></tr>
 </tbody></table>
@@ -46,3 +52,4 @@ _(Optional)_ date as string with YYYY-MM-DD
 Date
 
 A date in JS Date format
+

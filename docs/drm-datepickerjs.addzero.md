@@ -18,26 +18,32 @@ export declare function addZero(number: number): string;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 number
 
+
 </td><td>
 
 number
 
+
 </td><td>
 
 input number
+
 
 </td></tr>
 </tbody></table>
@@ -46,3 +52,4 @@ input number
 string
 
 number equal to 1 returns `01`<!-- -->, number equal to 29 returns `29`
+

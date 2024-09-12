@@ -11,7 +11,7 @@ Remove all event listeners
 ```typescript
 dispose(): void;
 ```
-
 **Returns:**
 
 void
+

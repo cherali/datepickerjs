@@ -16,38 +16,48 @@ emit(eventName: K, data: T): void;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 eventName
 
+
 </td><td>
 
 K
 
+
 </td><td>
+
 
 </td></tr>
 <tr><td>
 
 data
 
+
 </td><td>
 
 T
 
+
 </td><td>
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 void
+

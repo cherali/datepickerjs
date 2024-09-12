@@ -11,7 +11,7 @@ Return picker state
 ```typescript
 getPickerState(): PickerState;
 ```
-
 **Returns:**
 
 [PickerState](./drm-datepickerjs.pickerstate.md)
+

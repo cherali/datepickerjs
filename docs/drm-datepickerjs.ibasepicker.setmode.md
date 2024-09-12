@@ -18,29 +18,36 @@ setMode(mode: PickerMode): void;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 mode
 
+
 </td><td>
 
 [PickerMode](./drm-datepickerjs.pickermode.md)
 
+
 </td><td>
 
 set mode
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 void
+

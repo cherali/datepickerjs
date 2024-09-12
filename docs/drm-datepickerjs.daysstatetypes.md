@@ -4,6 +4,7 @@
 
 ## DaysStateTypes type
 
+
 **Signature:**
 
 ```typescript

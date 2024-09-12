@@ -18,29 +18,36 @@ onChangeDate(cb: EventCallBackType<string>): void;
 
 Parameter
 
+
 </th><th>
 
 Type
 
+
 </th><th>
 
 Description
+
 
 </th></tr></thead>
 <tbody><tr><td>
 
 cb
 
+
 </td><td>
 
 [EventCallBackType](./drm-datepickerjs.eventcallbacktype.md)<!-- -->&lt;string&gt;
 
+
 </td><td>
 
 a callback that will be call when date changes
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 void
+
