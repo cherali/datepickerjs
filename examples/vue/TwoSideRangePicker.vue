@@ -92,7 +92,9 @@ onScopeDispose(() => {
 })
 
 const handleHoverCell = (date: string) => {
-  onCellHover(date);
+  if (isSelecting()) {
+    onCellHover(date);
+  }
 };
 
 const getRangePickerBackgroundColor = (

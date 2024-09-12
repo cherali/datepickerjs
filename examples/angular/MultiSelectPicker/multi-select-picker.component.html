@@ -3,7 +3,8 @@
 
   <div style="width: 600px;">
     <div style="display: flex; gap: 16px;">
-      <input type="text" (focus)="datePicker.setOpen(true)" [value]="datePicker.getFirstSelectedDate()" [readonly]="true">
+      <input type="text" (focus)="datePicker.setOpen(true)" [value]="datePicker.getFirstSelectedDate()"
+        [readonly]="true">
 
       <span *ngIf="datePicker.getSelectedDates().size > 1" style="margin-inline-start: 8px">
         +{{ datePicker.getSelectedDates().size - 1 }}
@@ -15,7 +16,7 @@
     </div>
 
     <ng-container *ngIf="datePicker.isOpen() && !datePicker.isLoading()"
-                  style="display: flex; width: 600px; gap: 16px; flex-direction: row;">
+      style="display: flex; width: 600px; gap: 16px; flex-direction: row;">
       <ng-container *ngIf="datePicker.getMode() === 'month'">
         <div style="flex: 1;">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-direction: row-reverse;">
@@ -41,7 +42,7 @@
                 <div
                   [ngStyle]="{ 'background-color': datePicker.getRenderedMonth() === month.monthNumber ? '#cacaca' : '#fff', 'padding': '5px 0' }">
                   <button (click)="datePicker.changeMonth(month.monthNumber)"
-                          style="width: 100%; padding: 0; margin: 0; background-color: transparent; border: none;">
+                    style="width: 100%; padding: 0; margin: 0; background-color: transparent; border: none;">
                     <span>{{ month.name }}</span>
                   </button>
                 </div>
@@ -86,7 +87,7 @@
         </div>
       </ng-container>
 
-      <ng-container *ngIf="datePicker.getMode() === 'day'" >
+      <ng-container *ngIf="datePicker.getMode() === 'day'">
         <div style="display: flex; gap: 4px">
           <div style="flex: 1;">
             <div>
@@ -121,8 +122,8 @@
 
                 <ng-container *ngFor="let day of daysList; let index = index">
                   <div [ngStyle]="{ width: 'calc(100% / 7)' }" (mouseenter)="handleHoverCell(day.date)">
-                    <button  [ngStyle]="dayStyle(day)" [disabled]="day.day === 0"
-                             (click)="changeDayClick(day.date, day.state)($event)">
+                    <button [ngStyle]="dayStyle(day)" [disabled]="day.day === 0"
+                      (click)="changeDayClick(day.date, day.state)($event)">
                       {{ day.day }}
                     </button>
                   </div>
@@ -160,7 +161,7 @@
                 </ng-container>
               </div>
 
-              <div style="display: flex; flex-wrap: wrap;" >
+              <div style="display: flex; flex-wrap: wrap;">
                 <ng-container *ngFor="let index of [].constructor(datePicker.getDayMonthOffset(1)); let i = index;">
                   <div style="width: calc(100% / 7);"></div>
                 </ng-container>
@@ -168,8 +169,8 @@
                 <ng-container *ngFor="let day of daysListNext; let index = index">
                   <div [ngStyle]="{ width: 'calc(100% / 7)' }" (mouseenter)="handleHoverCell(day.date)">
 
-                    <button  [ngStyle]="dayStyle(day)" [disabled]="day.day === 0"
-                             (click)="changeDayClick(day.date, day.state)($event)">
+                    <button [ngStyle]="dayStyle(day)" [disabled]="day.day === 0"
+                      (click)="changeDayClick(day.date, day.state)($event)">
                       {{ day.day }}
                     </button>
                   </div>

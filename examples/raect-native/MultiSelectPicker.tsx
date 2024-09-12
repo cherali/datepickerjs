@@ -41,6 +41,7 @@ const datepickerHeight = 300;
 function MultiSelectPickerExample() {
   const [date, setDate] = useState<Date>(createDate()); // create date based on timezone
   const [rangeSelection, setRangeSelection] = useState(false);
+  const [rangeDeselection, setRangeDeselection] = useState(false);
 
   const inputRef = useRef<TextInput>(null);
   const monthWrapperRef = useRef<ScrollView>(null);
@@ -73,11 +74,11 @@ function MultiSelectPickerExample() {
     getRenderedNextDateYear,
     isDateInRange,
     isSelecting,
-    isEndDate,
     getDayMonthOffset,
     getSelectedDates,
     getFirstSelectedDate,
     selectInRange,
+    deSelectInRange,
     clearSelection,
   } = useMemo(
     // use memo to insure that only one instance of datePicker exist and don't change on re-rendering
@@ -182,6 +183,8 @@ function MultiSelectPickerExample() {
   const changeDayPress = (date: any, state: any) => () => {
     if (rangeSelection) {
       selectInRange(date, state);
+    } else if (rangeDeselection) {
+      deSelectInRange(date, state);
     } else {
       changeDay(date);
     }
@@ -209,10 +212,25 @@ function MultiSelectPickerExample() {
         </Pressable>
 
         <Pressable
-          onPress={() => setRangeSelection(s => !s)}
-          style={{ backgroundColor: "#cacaca" }}
+          onPress={() => {
+            setRangeSelection(s => !s);
+            setRangeDeselection(false);
+          }}
+          style={{ backgroundColor: rangeSelection ? "#10ca22" : "#cacaca" }}
         >
           <Text>{rangeSelection ? "Disable" : "Enable"} Range Selection</Text>
+        </Pressable>
+
+        <Pressable
+          onPress={() => {
+            setRangeSelection(false);
+            setRangeDeselection(s => !s);
+          }}
+          style={{ backgroundColor: rangeDeselection ? "#10ca22" : "#ffa8a8" }}
+        >
+          <Text>
+            {rangeDeselection ? "Disable" : "Enable"} Range De-Selection
+          </Text>
         </Pressable>
       </View>
 
@@ -567,12 +585,15 @@ function MultiSelectPickerExample() {
         )}
 
         {/* provide more info when user select date */}
-        {getMode() === "day" && isOpen() && !isLoading() && rangeSelection && (
-          <View>
-            {!isSelecting() && <Text>select start date</Text>}
-            {isSelecting() && <Text>select end date</Text>}
-          </View>
-        )}
+        {getMode() === "day" &&
+          isOpen() &&
+          !isLoading() &&
+          (rangeSelection || rangeDeselection) && (
+            <View>
+              {!isSelecting() && <Text>select start date</Text>}
+              {isSelecting() && <Text>select end date</Text>}
+            </View>
+          )}
       </View>
     </View>
   );

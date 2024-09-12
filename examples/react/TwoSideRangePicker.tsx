@@ -184,7 +184,7 @@ function TwoSideRangePicker() {
     else if (day.state !== "current") return otherColor;
     else if (isSelectedDay(day.date)) return selectColor;
     else if (!isSelecting() && isDateInRange(day.date)) return hoveredColor;
-    else return currentColor;
+    return currentColor;
   };
 
   const getRangePickerColor = (
@@ -202,10 +202,10 @@ function TwoSideRangePicker() {
     )
       return hoveredColor;
     else if (day.state === "current") return currentColor;
-    else return otherColor;
+    return otherColor;
   };
 
-  const dayStyle = day => ({
+  const dayStyle = (day: Days) => ({
     backgroundColor: getRangePickerBackgroundColor(
       day,
       "#cacaca",
@@ -257,19 +257,19 @@ function TwoSideRangePicker() {
                     flexDirection: "row-reverse",
                   }}
                 >
-                  <div style={{ flex: 1, textAlign: "end" }}>
-                    <button onClick={() => setMode("day")}>back</button>
-                  </div>
+                  <div style={{ flex: 1 }}></div>
                   <div>
                     <RenderTitle
                       year={getRenderedYear()}
                       month={getRenderedMonthName()}
                     />
                   </div>
-                  <div style={{ flex: 1 }}></div>
+                  <div style={{ flex: 1 }}>
+                    <button onClick={() => setMode("day")}>back</button>
+                  </div>
                 </div>
 
-                <div style={{ width: "50%", margin: "0 auto" }}>
+                <div style={{ width: "100%", margin: "0 auto" }}>
                   <div
                     ref={monthWrapperRef}
                     style={{ height: datepickerHeight, overflow: "auto" }}
@@ -319,19 +319,19 @@ function TwoSideRangePicker() {
                     flexDirection: "row-reverse",
                   }}
                 >
-                  <div style={{ flex: 1, textAlign: "end" }}>
-                    <button onClick={() => setMode("day")}>back</button>
-                  </div>
+                  <div style={{ flex: 1 }}></div>
                   <div>
                     <RenderTitle
                       year={getRenderedYear()}
                       month={getRenderedMonthName()}
                     />
                   </div>
-                  <div style={{ flex: 1 }}></div>
+                  <div style={{ flex: 1 }}>
+                    <button onClick={() => setMode("day")}>back</button>
+                  </div>
                 </div>
 
-                <div style={{ width: "50%", margin: "0 auto" }}>
+                <div style={{ width: "100%", margin: "0 auto" }}>
                   <div
                     ref={yearWrapperRef}
                     style={{

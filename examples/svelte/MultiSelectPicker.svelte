@@ -32,6 +32,8 @@
   const datepickerHeight = 300;
   let containerRef: any;
 
+  let isShiftKey = false;
+
   const date = writable(createDate());
 
   const datePicker = new MultiSelectPicker({
@@ -77,7 +79,6 @@
       nextYear = datePicker.getRenderedNextDateYear();
       nextMonth = datePicker.getRenderedNextMonthName();
       firstSelection = datePicker.getFirstSelectedDate();
-      selection = datePicker.getSelectedDates();
     });
 
     if (browser) {
@@ -91,18 +92,22 @@
     }
   });
 
+  const detectShiftKey = (event: KeyboardEvent) => {
+    if (event.shiftKey !== isShiftKey) {
+      isShiftKey = event.shiftKey;
+    }
+  };
+
   const getPickerBackgroundColor = (
     day: Days,
     currentColor: string,
     selectColor: string,
     otherColor: string,
   ) => {
-    if (
-      datePicker.isSelecting() &&
-      datePicker.isDateInRange(day.date) &&
-      day.state == "current"
-    )
-      return "#a1ffff";
+    const selecting = datePicker.isSelecting() && day.state == "current";
+    if (selecting && datePicker.isDateInRange(day.date, true) && isShiftKey)
+      return "#ff8686";
+    else if (selecting && datePicker.isDateInRange(day.date)) return "#a1ffff";
     else if (day.state !== "current") return otherColor;
     else if (datePicker.isSelectedDay(day.date)) return selectColor;
     else return currentColor;
@@ -132,13 +137,28 @@
     (date: string, state: DaysStateTypes) => (evt: MouseEvent) => {
       if (evt.ctrlKey) {
         datePicker.selectInRange(date, state);
+      } else if (evt.shiftKey) {
+        datePicker.deSelectInRange(date, state);
       } else {
         datePicker.changeDay(date);
       }
+      selection = datePicker.getSelectedDates();
     };
+
+  const handleHoverCell = (date: string) => () => {
+    if (datePicker.isSelecting()) {
+      datePicker.onCellHover(date);
+    }
+  };
 </script>
 
-<div bind:this={containerRef} style="display: inline-block; width: auto;">
+<div
+  bind:this={containerRef}
+  tabindex="-1"
+  role="menu"
+  on:keydown={detectShiftKey}
+  style="display: inline-block; width: auto;"
+>
   <button on:click={() => datePicker.goToToday()}>Go to today</button>
 
   <div style="width: 600px;">
@@ -308,7 +328,7 @@
                       style={dayStyle(day)}
                       disabled={day.day === 0}
                       on:click={changeDayClick(day.date, day.state)}
-                      on:mouseenter={() => datePicker.onCellHover(day.date)}
+                      on:mouseenter={handleHoverCell(day.date)}
                     >
                       {day.day}
                     </button>
@@ -369,7 +389,7 @@
                         style={dayStyle(day)}
                         disabled={day.day === 0}
                         on:click={changeDayClick(day.date, day.state)}
-                        on:mouseenter={() => datePicker.onCellHover(day.date)}
+                        on:mouseenter={handleHoverCell(day.date)}
                       >
                         {day.day}
                       </button>

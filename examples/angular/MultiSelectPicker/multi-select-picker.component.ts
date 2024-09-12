@@ -1,6 +1,7 @@
 import {
   Component,
   ElementRef,
+  HostListener,
   OnDestroy,
   OnInit,
   ViewChild,
@@ -47,6 +48,7 @@ export class MultiSelectPickerComponent implements OnInit, OnDestroy {
   hoveredDate: string = "";
   daysList: Days[];
   daysListNext: Days[];
+  isShiftKey = false;
 
   datePicker: MultiSelectPicker;
 
@@ -81,6 +83,12 @@ export class MultiSelectPickerComponent implements OnInit, OnDestroy {
     );
   }
 
+  @HostListener("keydown", ["$event"]) onKeyDown(event: PointerEvent) {
+    if (event.shiftKey != this.isShiftKey) {
+      this.isShiftKey = event.shiftKey;
+    }
+  }
+
   setupDateChangeListener(): void {
     this.datePicker.onChangeDate(() => {
       this.date = createDate(this.datePicker.getDate());
@@ -103,11 +111,14 @@ export class MultiSelectPickerComponent implements OnInit, OnDestroy {
       selectColor: string,
       otherColor: string,
     ) => {
+      const selecting = this.datePicker.isSelecting() && day.state == "current";
       if (
-        this.datePicker.isSelecting() &&
-        this.datePicker.isDateInRange(day.date) &&
-        day.state == "current"
+        selecting &&
+        this.datePicker.isDateInRange(day.date, true) &&
+        this.isShiftKey
       )
+        return "#ff8686";
+      else if (selecting && this.datePicker.isDateInRange(day.date))
         return "#a1ffff";
       else if (day.state !== "current") return otherColor;
       else if (this.datePicker.isSelectedDay(day.date)) return selectColor;
@@ -157,6 +168,8 @@ export class MultiSelectPickerComponent implements OnInit, OnDestroy {
     (date: string, state: DaysStateTypes) => (evt: MouseEvent) => {
       if (evt.ctrlKey) {
         this.datePicker.selectInRange(date, state);
+      } else if (evt.shiftKey) {
+        this.datePicker.deSelectInRange(date, state);
       } else {
         this.datePicker.changeDay(date);
       }

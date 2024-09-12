@@ -139,6 +139,12 @@
     border: none;
     padding: 5px 0;
   `;
+
+  const handleHoverCell = (date: string) => () => {
+    if (datePicker.isSelecting()) {
+      datePicker.onCellHover(date);
+    }
+  };
 </script>
 
 <div bind:this={containerRef} style="display: inline-block; width: auto;">
@@ -299,7 +305,7 @@
                       style={dayStyle(day)}
                       disabled={day.day === 0}
                       on:click={() => datePicker.changeDay(day.date, day.state)}
-                      on:mouseenter={() => datePicker.onCellHover(day.date)}
+                      on:mouseenter={handleHoverCell(day.date)}
                     >
                       {day.day}
                     </button>
@@ -361,7 +367,7 @@
                         disabled={day.day === 0}
                         on:click={() =>
                           datePicker.changeDay(day.date, day.state)}
-                        on:mouseenter={() => datePicker.onCellHover(day.date)}
+                        on:mouseenter={handleHoverCell(day.date)}
                       >
                         {day.day}
                       </button>

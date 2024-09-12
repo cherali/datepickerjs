@@ -32,6 +32,8 @@ const datepickerHeight = 300;
 
 const date = ref(createDate())
 
+let isShiftKey = false
+
 const containerRef = ref<HTMLDivElement>();
 
 const {
@@ -64,6 +66,7 @@ const {
   getSelectedDates,
   getFirstSelectedDate,
   selectInRange,
+  deSelectInRange,
   clearSelection,
 } = new MultiSelectPicker({
   date: formatDate(date.value),
@@ -94,7 +97,17 @@ onScopeDispose(() => {
   document.removeEventListener("click", handleClickOutside, true);
 })
 
+const detectShiftKey = (event: KeyboardEvent) => {
+  if (event.shiftKey !== isShiftKey) {
+    isShiftKey = event.shiftKey;
+  }
+};
+
 const handleHoverCell = (date: string) => {
+  if (isSelecting()) {
+    onCellHover(date);
+  }
+
   onCellHover(date);
 };
 
@@ -104,8 +117,10 @@ const getPickerBackgroundColor = (
   selectColor: string,
   otherColor: string,
 ) => {
-  if (isSelecting() && isDateInRange(day.date) && day.state == "current")
-    return "#a1ffff";
+  const selecting = isSelecting() && day.state == "current";
+  if (selecting && isDateInRange(day.date, true) && isShiftKey)
+    return "#ff8686";
+  else if (selecting && isDateInRange(day.date)) return "#a1ffff";
   else if (day.state !== "current") return otherColor;
   else if (isSelectedDay(day.date)) return selectColor;
   else return currentColor;
@@ -139,6 +154,8 @@ const dayStyle = (day: Days) => ({
 function changeDayClick(date: string, state: DaysStateTypes, evt: MouseEvent) {
   if (evt.ctrlKey) {
     selectInRange(date, state);
+  } else if (evt.shiftKey) {
+    deSelectInRange(date, state)
   } else {
     changeDay(date);
   }
@@ -152,7 +169,7 @@ function getDateRef() {
 </script>
 
 <template>
-  <div :key="getDateRef()" style="display: inline-block; width: auto;" ref="containerRef">
+  <div :key="getDateRef()" @keydown="detectShiftKey" style="display: inline-block; width: auto;" ref="containerRef">
     <button @click="goToToday">go to today</button>
 
     <div style="width: 600px">

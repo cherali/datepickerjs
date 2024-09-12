@@ -71,6 +71,7 @@ function picker() {
     getSelectedDates,
     getFirstSelectedDate,
     selectInRange,
+    deSelectInRange,
     clearSelection,
   } = new MultiSelectPicker({
     date: date, // set this to "" if no need to mark today as selected
@@ -78,6 +79,8 @@ function picker() {
     dayRenderType: "fill",
     twoSide: true,
   });
+
+  let isShiftKey = false;
 
   const renderTitle = ({ year, month }) => {
     const titleTemplate = document.getElementById("title");
@@ -91,8 +94,10 @@ function picker() {
     selectColor,
     otherColor,
   ) => {
-    if (isSelecting() && isDateInRange(day.date) && day.state == "current")
-      return "#a1ffff";
+    const selecting = isSelecting() && day.state == "current";
+    if (selecting && isDateInRange(day.date, true) && isShiftKey)
+      return "#ff8686";
+    else if (selecting && isDateInRange(day.date)) return "#a1ffff";
     else if (day.state !== "current") return otherColor;
     else if (isSelectedDay(day.date)) return selectColor;
     else return currentColor;
@@ -359,6 +364,8 @@ function picker() {
   const onDayClicked = (date, state) => (evt: Event) => {
     if ((evt as PointerEvent).ctrlKey) {
       selectInRange(date, state);
+    } else if ((evt as PointerEvent).shiftKey) {
+      deSelectInRange(date, state);
     } else {
       changeDay(date);
     }
@@ -377,8 +384,8 @@ function picker() {
     updateDom();
   };
 
-  const handleHoverCell = date => (evt: Event) => {
-    if ((evt as PointerEvent).ctrlKey && isSelecting()) {
+  const handleHoverCell = date => () => {
+    if (isSelecting()) {
       onCellHover(date);
     }
   };
@@ -448,6 +455,13 @@ function picker() {
     document
       .getElementById("clear-selection")!
       .addEventListener("click", clearSelection);
+
+    // picker container listener for detecting shift key
+    document.getElementById("container")?.addEventListener("keydown", event => {
+      if (event.shiftKey !== isShiftKey) {
+        isShiftKey = event.shiftKey;
+      }
+    });
   };
 
   onChangeDate(() => {

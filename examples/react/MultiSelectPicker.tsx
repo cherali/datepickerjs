@@ -5,6 +5,7 @@ import React, {
   useMemo,
   useTransition,
   MouseEvent,
+  KeyboardEventHandler,
 } from "react";
 import {
   MultiSelectPicker,
@@ -12,6 +13,7 @@ import {
   createDate,
   formatDate,
   Days,
+  DaysStateTypes,
 } from "drm-datepickerjs";
 
 const locale: PickerLocale = year => ({
@@ -39,6 +41,7 @@ function MultiSelectPickerExample() {
   const [isPending, startTransition] = useTransition();
   const [date, setDate] = useState<Date>(createDate()); // create date based on timezone
   const containerRef = useRef<HTMLDivElement>(null);
+  const isShiftKey = useRef<boolean>(false);
 
   const monthWrapperRef = useRef<HTMLDivElement>(null);
   const yearWrapperRef = useRef<HTMLDivElement>(null);
@@ -71,11 +74,11 @@ function MultiSelectPickerExample() {
     onCellHover,
     isDateInRange,
     isSelecting,
-    isEndDate,
     getDayMonthOffset,
     getSelectedDates,
     getFirstSelectedDate,
     selectInRange,
+    deSelectInRange,
     clearSelection,
   } = useMemo(
     // use memo to insure that only one instance of datePicker exist and don't change on re-rendering
@@ -117,8 +120,16 @@ function MultiSelectPickerExample() {
   const daysList = getDays();
   const daysListNext = getDays("next");
 
+  const detectShiftKey: KeyboardEventHandler<HTMLDivElement> = event => {
+    if (event.shiftKey !== isShiftKey.current) {
+      isShiftKey.current = event.shiftKey;
+    }
+  };
+
   const handleHoverCell = (date: string) => () => {
-    onCellHover(date);
+    if (isSelecting()) {
+      onCellHover(date);
+    }
   };
 
   const handleSmoothScroll = (
@@ -175,11 +186,14 @@ function MultiSelectPickerExample() {
     selectColor: string,
     otherColor: string,
   ) => {
-    if (isSelecting() && isDateInRange(day.date) && day.state == "current")
-      return "#a1ffff";
+    const selecting = isSelecting() && day.state == "current";
+
+    if (selecting && isDateInRange(day.date, true) && isShiftKey.current)
+      return "#ff8686";
+    else if (selecting && isDateInRange(day.date)) return "#a1ffff";
     else if (day.state !== "current") return otherColor;
     else if (isSelectedDay(day.date)) return selectColor;
-    else return currentColor;
+    return currentColor;
   };
 
   const getPickerColor = (
@@ -190,10 +204,10 @@ function MultiSelectPickerExample() {
   ) => {
     if (isSelectedDay(day.date) && day.state === "current") return selectColor;
     else if (day.state === "current") return currentColor;
-    else return otherColor;
+    return otherColor;
   };
 
-  const dayStyle = day => ({
+  const dayStyle = (day: Days) => ({
     backgroundColor: getPickerBackgroundColor(
       day,
       "#cacaca",
@@ -206,16 +220,22 @@ function MultiSelectPickerExample() {
     padding: "5px 0",
   });
 
-  const changeDayClick = (date, state) => (evt: MouseEvent) => {
-    if (evt.ctrlKey) {
-      selectInRange(date, state);
-    } else {
-      changeDay(date);
-    }
-  };
+  const changeDayClick =
+    (date: string, state: DaysStateTypes) => (evt: MouseEvent) => {
+      if (evt.ctrlKey) {
+        selectInRange(date, state);
+      } else if (evt.shiftKey) {
+        deSelectInRange(date, state);
+      } else {
+        changeDay(date);
+      }
+    };
 
   return (
-    <div style={{ display: "inline-block", width: "auto" }}>
+    <div
+      style={{ display: "inline-block", width: "auto" }}
+      onKeyDown={detectShiftKey}
+    >
       <button onClick={goToToday}>go to today</button>
 
       <div ref={containerRef} style={{ width: 600 }}>
@@ -255,19 +275,19 @@ function MultiSelectPickerExample() {
                     flexDirection: "row-reverse",
                   }}
                 >
-                  <div style={{ flex: 1, textAlign: "end" }}>
-                    <button onClick={() => setMode("day")}>back</button>
-                  </div>
+                  <div style={{ flex: 1 }}></div>
                   <div>
                     <RenderTitle
                       year={getRenderedYear()}
                       month={getRenderedMonthName()}
                     />
                   </div>
-                  <div style={{ flex: 1 }}></div>
+                  <div style={{ flex: 1 }}>
+                    <button onClick={() => setMode("day")}>back</button>
+                  </div>
                 </div>
 
-                <div style={{ width: "50%", margin: "0 auto" }}>
+                <div style={{ width: "100%", margin: "0 auto" }}>
                   <div
                     ref={monthWrapperRef}
                     style={{ height: datepickerHeight, overflow: "auto" }}
@@ -317,19 +337,19 @@ function MultiSelectPickerExample() {
                     flexDirection: "row-reverse",
                   }}
                 >
-                  <div style={{ flex: 1, textAlign: "end" }}>
-                    <button onClick={() => setMode("day")}>back</button>
-                  </div>
+                  <div style={{ flex: 1 }}></div>
                   <div>
                     <RenderTitle
                       year={getRenderedYear()}
                       month={getRenderedMonthName()}
                     />
                   </div>
-                  <div style={{ flex: 1 }}></div>
+                  <div style={{ flex: 1 }}>
+                    <button onClick={() => setMode("day")}>back</button>
+                  </div>
                 </div>
 
-                <div style={{ width: "50%", margin: "0 auto" }}>
+                <div style={{ width: "100", margin: "0 auto" }}>
                   <div
                     ref={yearWrapperRef}
                     style={{
