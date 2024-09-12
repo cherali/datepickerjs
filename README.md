@@ -1,5 +1,30 @@
 # drm-datepickerjs
 
+<div style="display:flex; gap: 4px;">
+
+<img 
+    src="https://img.shields.io/github/actions/workflow/status/cherali/datepickerjs/release_package.yml?logo=github&style=flat-square"  alt="build" />
+
+  <a href="https://www.npmjs.com/package/drm-datepickerjs">
+    <img 
+      src="https://img.shields.io/npm/v/drm-datepickerjs?color=cb3837&label=NPM&style=flat-square"  alt="Current npm package version." />
+  </a>
+
+  <a href="https://www.npmjs.com/package/typescript">
+    <img 
+      src="https://img.shields.io/github/package-json/dependency-version/cherali/datepickerjs/dev/typescript?logo=typescript&logoColor=white&color=3178C6&label=Typescript&style=flat-square"  alt="Package - Typescript" />
+  </a>
+
+<img 
+    src="https://img.shields.io/librariesio/dependents/npm/drm-datepickerjs?label=Dependencies&style=flat-square"  
+    alt="Dependencies" />
+
+<img 
+    src="https://img.shields.io/bundlejs/size/drm-datepickerjs?color=7F27FF&style=flat-square"  
+    alt="Bundle size" />
+
+</div>
+
 <table>
   <thead>
     <tr>
