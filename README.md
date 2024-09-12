@@ -1,5 +1,30 @@
 # drm-datepickerjs
 
+<table>
+  <thead>
+    <tr>
+      <th>DatePicker - `space`</th>
+      <th>DatePicker - `fll`</th>
+      <th>DatePicker With Custom Event</th>
+      <th>RangePicker - `twoSide`</th>
+      <th>Multi-Select</th>
+      <th>DatePicker - Localization</th>
+      <th>DatePicker - Localization with Gregorian As Secondary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img alt='img' src='./assets/datepicker-space.png' width='100%' /></td>
+      <td><img alt='img' src='./assets/datepicker-fill.png' width='100%' /></td>
+      <td><img alt='img' src='./assets/datepicker-event.png' width='100%' /></td>
+      <td><img alt='img' src='./assets/range-picker.png' width='100%' /></td>
+      <td><img alt='img' src='./assets/multi-select-picker.png' width='100%' /></td>
+      <td><img alt='img' src='./assets/datepicker-localization.png' width='100%' /></td>
+      <td><img alt='img' src='./assets/datepicker-localization-gregorian.png' width='100%' /></td>
+  </tr>
+  </tbody>
+</table>
+
 An headless, event-base, picker for Javascript project, with customization and localization support. This package provides your core functionality to create any picker your want, it does't matter which design system you use for UI and how much you need to customize the picker. <br>
 This package provides you with 3 different of pickers
 
