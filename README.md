@@ -35,7 +35,7 @@
   <thead>
     <tr>
       <th>DatePicker - `space`</th>
-      <th>DatePicker - `fll`</th>
+      <th>DatePicker - `fill`</th>
       <th>DatePicker With Custom Event</th>
       <th>RangePicker - `twoSide`</th>
       <th>Multi-Select</th>
@@ -68,10 +68,10 @@ This package provides you with 3 different of pickers
 
 ## Introduction
 
-This package created in order to work regardless which tool you use, for example it doesn't matter you use a style system or write your style in pure css, it doesn't matter you use one of the existing JS framework or use a custom framework that you created by your own, still possible to use this package, also if you using `pure js` it's possible to use CDN ([check this](./markdown//usage.md#using-cdn)), even possible to use require instead of import (.cjs file included).
+This package created in order to work regardless which tool you use, for example it doesn't matter you use a style system or write your style in pure css, it doesn't matter you use one of the existing JS framework or use a custom framework that you created by your own, still possible to use this package, also if you using `pure js` it's possible to use CDN ([check this](./markdown/usage.md#using-cdn)), even possible to use require instead of import (.cjs file included).
 <br>
 
-With this package you can add your localization easily, and it's up to you to determine the switch condition. [doc](./markdown/localization.md)
+With this package you can add your localization easily, and it's up to you to determine the switch condition. [localization doc](./markdown/localization.md)
 <br>
 
 This package use JS `new Date()` to create dates and stores date based on gregorian calendar, this gives you more flexibility for example you can show one calendar as your primary calendar and show others calendar by only create a helper function that convert gregorian date to your target calendar, passing date to this converter gives you converted date, then you can do whatever you want with this date.
@@ -90,12 +90,22 @@ A picker is a JS class, and if you want you can add more functionality (just cre
 - Event base Picker
 - Support `leap` year
 - Zero dependency
-- `Low bundle size` (less than 5KB)
+- Supports cjs (common js, for Node.js environment, i.e require - module.exports)
+- `Low bundle size` (for ES Module, without trees shaking entire package bundle size (gzip) equals to [![~4KB](https://img.shields.io/bundlejs/size/drm-datepickerjs?color=7F27FF&label=&style=flat-square)](https://www.npmjs.com/package/drm-datepickerjs "bundle size")).
 - Supports Type (the entire package written with Typescript)
 - Available Pickers: `DatePicker`, `RangePicker`, `MultiSelectPicker`
 
-You can create your `custom event` and show it anywhere you want [check this](./markdown/customization.md#custom-event), <br>
-Also with MultiSelectPicker you can select range of dates by holding `ctrlKey`, and de-select dates by holding `shiftKey`. [see customization for more info](./markdown/customization.md#multiselectpicker-range-selection)
+You can create your `custom event` and show it anywhere you want ([check this](./markdown/customization.md#custom-event)). <br>
+Also with MultiSelectPicker you can select range of dates by holding `ctrlKey`, and de-select dates by holding `shiftKey`. ([see customization for more info](./markdown/customization.md#multiselectpicker-range-selection))
+
+## How This Package Works
+
+By adding this package you have access to 3 different types of pickers, you can change the behavior of the picker by passing some flags to the picker constructor (for more info read [Customization](./markdown/customization.md)), then picker instance gives you the functionality you need to create any picker you want, and it is you who decides to use all or some of these functions.<br>
+In picker instance there is 2 more functions that I want to mention, `changeDay` and `onChangeDate`.
+
+- The `changeDay` function can change the selected date, and this is the handler that must be called when user want to click/tap on a date.
+- The `onChangeDate` takes a callback as an argument and runs it _after_ user click/tap a button in order to change the date. <br>
+  **Check the documentation about other functions [doc](./docs/index.md).**
 
 ## Notes
 
