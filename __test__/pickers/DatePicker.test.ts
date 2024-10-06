@@ -232,15 +232,15 @@ describe("Testing `DatePicker` Functionality", () => {
     });
 
     test("Print current month name", () => {
-      expect(picker.getRenderedMonthName()).toBe("September");
+      expect(picker2.getRenderedMonthName()).toBe("September");
     });
 
     test("Print next month name", () => {
-      expect(picker.getRenderedNextMonthName()).toBe("October");
+      expect(picker2.getRenderedNextMonthName()).toBe("October");
     });
 
     test("Print next month", () => {
-      expect(picker.getRenderedNextMonth()).toBe(10);
+      expect(picker2.getRenderedNextMonth()).toBe(10);
     });
 
     test("Print next date year", () => {
@@ -259,8 +259,8 @@ describe("Testing `DatePicker` Functionality", () => {
     });
 
     test("Navigate to 10th month", () => {
-      picker.handleShowNextMonth();
-      expect(picker.getRenderedMonth()).toBe(10);
+      picker2.handleShowNextMonth();
+      expect(picker2.getRenderedMonth()).toBe(10);
     });
 
     test("Navigate to 8th month", () => {
