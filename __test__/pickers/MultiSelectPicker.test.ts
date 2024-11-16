@@ -1,6 +1,6 @@
 import { expect, test, describe, afterAll } from "vitest";
 import { MultiSelectPicker } from "../../src/pickers/MultiSelectPicker";
-import { createDate, formatDate } from "../../src/utils/dateUtils";
+import { createDate, formatDate, getMonth } from "../../src/utils/dateUtils";
 
 const locale = year => ({
   months: {
@@ -234,6 +234,7 @@ describe("Testing `MultiSelectPicker` Functionality", () => {
     });
 
     test("Testing for last item in array", () => {
+      picker.changeMonth(getMonth(date));
       expect(picker.getDays().pop()).toStrictEqual({
         state: "next",
         day: 12,
@@ -249,8 +250,8 @@ describe("Testing `MultiSelectPicker` Functionality", () => {
 
     test("Testing days array - first item", () => {
       const firstItem = picker4.getDays()[0];
-      expect(formatter(firstItem.date)).toBe("1403-04-30");
-      expect(firstItem.state).toBe("prev");
+      expect(formatter(firstItem!.date)).toBe("1403-04-30");
+      expect(firstItem!.state).toBe("prev");
     });
 
     test("Testing days array - last item", () => {

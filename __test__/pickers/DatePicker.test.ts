@@ -264,7 +264,7 @@ describe("Testing `DatePicker` Functionality", () => {
     });
 
     test("Navigate to 8th month", () => {
-      picker.handleShowPrevMonth();
+      picker.changeDay(date, "current");
       picker.handleShowPrevMonth();
       expect(picker.getRenderedMonth()).toBe(8);
     });
@@ -351,8 +351,8 @@ describe("Testing `DatePicker` Functionality", () => {
 
     test("Testing days array - first item", () => {
       const firstItem = picker5.getDays()[0];
-      expect(formatter(firstItem.date)).toBe("1403-05-27");
-      expect(firstItem.state).toBe("prev");
+      expect(formatter(firstItem!.date)).toBe("1403-05-27");
+      expect(firstItem!.state).toBe("prev");
     });
 
     test("Testing days array - last item", () => {
