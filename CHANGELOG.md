@@ -1,0 +1,7 @@
+## 2.0.0 (November 16, 2024)
+
+- set `allowSyntheticDefaultImports` to false
+- Fix breaking tests
+- Migrate to `istanbul` test provider
+- Update Readme
+- Update packages
