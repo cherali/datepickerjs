@@ -28,7 +28,7 @@ export default defineConfig({
   },
   test: {
     coverage: {
-      provider: "v8",
+      provider: "istanbul",
       include: ["src/core/**", "src/utils/**", "src/pickers/**"],
     },
   },
