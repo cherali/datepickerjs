@@ -29,9 +29,7 @@
     "url": "https://github.com/cherali/datepickerjs/issues"
   },
   "files": [
-    "dist",
-    "src",
-    "examples"
+    "dist"
   ],
   "sideEffects": false,
   "main": "./dist/drm-datepickerjs.cjs",

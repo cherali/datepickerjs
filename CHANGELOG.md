@@ -1,6 +1,7 @@
-## 2.1.0 (November 19, 2024)
+## 2.1.0, 2.1.1 (November 19, 2024)
 
 - Disable source map
+- Remove examples and src folders from final output
 
 <br/>
 
