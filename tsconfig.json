@@ -10,7 +10,7 @@
     "outDir": "./dist",
     "resolveJsonModule": true,
     "skipLibCheck": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "stripInternal": true,
     "strict": true,
     "noImplicitThis": true,
@@ -27,7 +27,7 @@
     "allowImportingTsExtensions": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
-    "declarationMap": true,
+    "declarationMap": false,
     "useDefineForClassFields": true,
     "downlevelIteration": true
   },
