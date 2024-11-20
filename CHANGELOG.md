@@ -1,3 +1,10 @@
+## 2.1.2 (November 20, 2024)
+
+- Add doc info for types
+- Update GitHub workflow
+
+<br/>
+
 ## 2.1.0, 2.1.1 (November 19, 2024)
 
 - Disable source map
