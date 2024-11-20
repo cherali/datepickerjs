@@ -51,7 +51,7 @@ export type PickerState = "loading" | "rendered" | "selecting";
  *
  * Used to determine which month to show days.
  *
- * the argument of `getDays` method is `twoSide` is true, then `next` and `current` are used.
+ * The argument of `getDays` method when `twoSide` is true.
  *
  * The `current` and `next` relative to selected date or rendered date.
  * @public
