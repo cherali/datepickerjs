@@ -1,4 +1,4 @@
-## 2.1.2 (November 20, 2024)
+## 2.1.2, 2.1.3 (November 20, 2024)
 
 - Add doc info for types
 - Update GitHub workflow
