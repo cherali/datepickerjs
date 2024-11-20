@@ -53,8 +53,9 @@
     "prebuild": "npm run test && npm run lint && npm run format",
     "build": "tsc && vite build",
     "api-extract": "api-extractor run --local --verbose",
+    "build-and-extract": "npm run build && npm run api-extract",
     "api-docs": "npx api-documenter markdown -i temp -o docs",
-    "build-and-doc": "npm run build && npm run api-extract && npm run api-docs",
+    "build-and-doc": "npm run build-and-extract && npm run api-docs",
     "analyze": "npm run build --report",
     "dev": "vite"
   },
