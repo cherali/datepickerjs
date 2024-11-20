@@ -4,6 +4,9 @@
 
 ## PickerState type
 
+The Picker state
+
+Used to show a loading if necessary
 
 **Signature:**
 

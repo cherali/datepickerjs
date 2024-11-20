@@ -4,6 +4,17 @@
 
 ## PickerMode type
 
+Picker mode
+
+Used to determine which mode of picker to show.
+
+You may need to show different mode when user opens the picker.
+
+The `day` mode is used to show day selection UI.
+
+The `month` mode is used to show month selection UI.
+
+The `year` mode is used to show year selection UI.
 
 **Signature:**
 

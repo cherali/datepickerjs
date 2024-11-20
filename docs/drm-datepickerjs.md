@@ -328,6 +328,9 @@ Type of Date formatter
 
 </td><td>
 
+Picker day state
+
+Used to distinguish days of current, next and previous month.
 
 
 </td></tr>
@@ -360,6 +363,17 @@ Type of item that getMonthList function returns
 
 </td><td>
 
+Picker day render type
+
+Used to determine how to render days.
+
+A month not always start from first day of week, in this situation what you want to do with those days.
+
+If you want to leave those days empty, use `space` type.
+
+If you want to fill those days with prev and next month days, use `fill` type.
+
+This also determine how to deal with empty slots when reaching the end of month.
 
 
 </td></tr>
@@ -392,6 +406,17 @@ use for typing locale fn
 
 </td><td>
 
+Picker mode
+
+Used to determine which mode of picker to show.
+
+You may need to show different mode when user opens the picker.
+
+The `day` mode is used to show day selection UI.
+
+The `month` mode is used to show month selection UI.
+
+The `year` mode is used to show year selection UI.
 
 
 </td></tr>
@@ -402,6 +427,13 @@ use for typing locale fn
 
 </td><td>
 
+Picker month state
+
+Used to determine which month to show days.
+
+the argument of `getDays` method is `twoSide` is true, then `next` and `current` are used.
+
+The `current` and `next` relative to selected date or rendered date.
 
 
 </td></tr>
@@ -412,6 +444,9 @@ use for typing locale fn
 
 </td><td>
 
+The Picker state
+
+Used to show a loading if necessary
 
 
 </td></tr>

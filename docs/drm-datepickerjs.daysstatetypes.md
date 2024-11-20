@@ -4,6 +4,9 @@
 
 ## DaysStateTypes type
 
+Picker day state
+
+Used to distinguish days of current, next and previous month.
 
 **Signature:**
 

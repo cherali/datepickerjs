@@ -79,7 +79,7 @@ export interface Days {
     state: DaysStateTypes;
 }
 
-// @public (undocumented)
+// @public
 export type DaysStateTypes = "prev" | "next" | "current";
 
 // @public
@@ -229,7 +229,7 @@ export interface MultiSelectPickerOptions extends BasePickerOptions {
     selectedDate?: Map<string, number>;
 }
 
-// @public (undocumented)
+// @public
 export type PickerDayRenderType = "fill" | "space";
 
 // @public
@@ -238,13 +238,13 @@ export type PickerEvents = "changeDate" | "changeMode" | "changeOpen" | "changeS
 // @public
 export type PickerLocale = (year: number) => LocaleProps;
 
-// @public (undocumented)
+// @public
 export type PickerMode = "day" | "month" | "year";
 
-// @public (undocumented)
+// @public
 export type PickerMonthState = "current" | "next";
 
-// @public (undocumented)
+// @public
 export type PickerState = "loading" | "rendered" | "selecting";
 
 // @public

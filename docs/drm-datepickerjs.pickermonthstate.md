@@ -4,6 +4,13 @@
 
 ## PickerMonthState type
 
+Picker month state
+
+Used to determine which month to show days.
+
+the argument of `getDays` method is `twoSide` is true, then `next` and `current` are used.
+
+The `current` and `next` relative to selected date or rendered date.
 
 **Signature:**
 
